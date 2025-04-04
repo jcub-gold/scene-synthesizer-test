@@ -38,6 +38,7 @@ s.add_object(
     connect_obj_anchor=('center', 'back', 'bottom'),         # bottom of the upper cabinet
     translation=(0, 0, 0.2)
 )
-s.show()
+# s.show()
 
+s.export('exports/initial_scene.urdf')
 
