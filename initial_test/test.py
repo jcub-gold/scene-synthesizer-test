@@ -1,26 +1,26 @@
 import numpy as np
 import open3d as o3d
-import scene_synthesizer as synth
-from scene_synthesizer import procedural_assets as pa
+import scene_synthesize as synth
+from scene_synthesize import procedural_assets as pa
 from trimesh.scene.lighting import Light
 import numpy as np
 
-pcd = o3d.io.read_point_cloud("synthetic_drawer.pcd")
+# pcd = o3d.io.read_point_cloud("synthetic_drawer.pcd")
 
-angle = np.pi / 9
-R = np.array([
-    [1, 0, 0],
-    [0, np.cos(angle), -np.sin(angle)],
-    [0, np.sin(angle), np.cos(angle)]
-])
+# angle = np.pi / 9
+# R = np.array([
+#     [1, 0, 0],
+#     [0, np.cos(angle), -np.sin(angle)],
+#     [0, np.sin(angle), np.cos(angle)]
+# ])
 
-pcd.rotate(R, center=(0,0,0))
+# pcd.rotate(R, center=(0,0,0))
 
-aabb = pcd.get_axis_aligned_bounding_box()
-aabb.color = (1, 0, 0)
+# aabb = pcd.get_axis_aligned_bounding_box()
+# aabb.color = (1, 0, 0)
 
-obb = pcd.get_oriented_bounding_box()
-obb.color = (0, 1, 0)
+# obb = pcd.get_oriented_bounding_box()
+# obb.color = (0, 1, 0)
 
 cabinet = pa.BaseCabinetAsset(width=1.0)
 s = synth.Scene()
