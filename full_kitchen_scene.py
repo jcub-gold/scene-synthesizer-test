@@ -6,13 +6,13 @@ from trimesh.scene.lighting import Light
 import numpy as np
 from scene_synthesizer.assets import BoxAsset
 
-lower_large_double_cabinet = pa.BaseCabinetAsset(width=0.92, height = 0.88, depth=0.63, drawer_height=0.16, foot_panel_height=0.1)
-lower_large_single_cabinet = pa.BaseCabinetAsset(width=0.46, height = 0.88, depth=0.63, drawer_height=0.16, foot_panel_height=0.1, num_drawers_horizontal=1)
-lower_double_drawer = pa.BaseCabinetAsset(width=0.92, height = 0.38, depth=0.63, drawer_height=0.28, foot_panel_height=0.09)
-sink = pa.SinkCabinetAsset(width=0.92, height = 0.92, depth=0.63, drawer_height=0.16, countertop_thickness=0.04, sink_width=0.63, sink_offset=(0,0.03))
-left_box = BoxAsset(extents=[0.63, 0.63, 0.88])
-lower_small_double_cabinet = pa.BaseCabinetAsset(width=0.69, height = 0.88, depth=0.63, drawer_height=0.16, foot_panel_height=0.1)
-right_box = BoxAsset(extents=[0.67, 0.61, 0.88])
+lower_large_double_cabinet = pa.BaseCabinetAsset(width=0.92, height = 0.78, depth=0.63, drawer_height=0.16, include_foot_panel=False)
+lower_large_single_cabinet = pa.BaseCabinetAsset(width=0.46, height = 0.78, depth=0.63, drawer_height=0.16, include_foot_panel=False, num_drawers_horizontal=1)
+lower_double_drawer = pa.BaseCabinetAsset(width=0.92, height = 0.28, depth=0.63, drawer_height=0.28, include_foot_panel=False, include_cabinet_doors=False)
+sink = pa.SinkCabinetAsset(width=0.92, height = 0.82, depth=0.63, drawer_height=0.16, countertop_thickness=0.04, sink_width=0.63, sink_offset=(0,0.03))
+left_box = BoxAsset(extents=[0.63, 0.63, 0.78])
+lower_small_double_cabinet = pa.BaseCabinetAsset(width=0.69, height = 0.78, depth=0.63, drawer_height=0.16, include_foot_panel=False)
+right_box = BoxAsset(extents=[0.67, 0.61, 0.78])
 refrigerator = pa.RefrigeratorAsset(width=0.92, height = 2.12, depth=0.71)
 upper_small_double_cabinet = pa.WallCabinetAsset(width=.86, height=.76, depth=.31)
 upper_left_single_cabinet = pa.WallCabinetAsset(width=.46, height=.76, depth=.31, compartment_types=("door_left",))
@@ -21,6 +21,8 @@ upper_right_single_cabinet = pa.WallCabinetAsset(width=.46, height=.76, depth=.3
 right_counter = BoxAsset(extents=[4.81, 0.63, 0.04])
 left_counter_left_of_sink = BoxAsset(extents=[1.55, 0.63, 0.04])
 left_counter_right_of_refrigerator = BoxAsset(extents=[0.69, 0.63, 0.04])
+long_bottom_foot_panel = BoxAsset(extents=[6.65, 0.61, 0.1])
+short_bottom_foot_panel = BoxAsset(extents=[1.32, 0.61, 0.1])
 
 s = synth.Scene()
 s.add_object(lower_large_double_cabinet, 'lower_two_cabinet_right_of_sink')
@@ -109,7 +111,7 @@ s.add_object(
     connect_parent_id='lower_small_double_cabinet',
     connect_parent_anchor=('left', 'back', 'bottom'),         # top of the lower cabinet
     connect_obj_anchor=('right', 'back', 'bottom'),         # bottom of the upper cabinet
-    translation=(0, 0, 0.0)
+    translation=(0, 0, -0.10)
 )
 s.add_object(
     upper_small_double_cabinet,
@@ -182,7 +184,23 @@ s.add_object(
     connect_obj_anchor=('right', 'back', 'bottom'),         # bottom of the upper cabinet
     translation=(0, 0, 0.0)
 )
+s.add_object(
+    long_bottom_foot_panel,
+    'long_bottom_foot_panel',
+    connect_parent_id='lower_two_cabinet_direct_left_of_sink',
+    connect_parent_anchor=('left', 'back', 'bottom'),         # top of the lower cabinet
+    connect_obj_anchor=('left', 'back', 'top'),         # bottom of the upper cabinet
+    translation=(0, 0, 0.0)
+)
+s.add_object(
+    short_bottom_foot_panel,
+    'short_bottom_foot_panel',
+    connect_parent_id='lower_small_double_cabinet',
+    connect_parent_anchor=('left', 'back', 'bottom'),         # top of the lower cabinet
+    connect_obj_anchor=('left', 'back', 'top'),         # bottom of the upper cabinet
+    translation=(0, 0, 0.0)
+)
 
 # s.show()
 
-s.export('test/tested.urdf')
+s.export('kitchens/kitchen.urdf')
