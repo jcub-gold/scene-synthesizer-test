@@ -46,27 +46,71 @@ def align_mesh(mesh):
     
     return best_mesh, best_angles
 
-def find_front_face_corners(vertices):
-    # Project vertices onto XY plane
-    xy = vertices[:, :2]
-    # Find min/max X and Y
-    min_x_idx = np.argmin(xy[:, 0])
-    max_x_idx = np.argmax(xy[:, 0])
-    min_y_idx = np.argmin(xy[:, 1])
-    max_y_idx = np.argmax(xy[:, 1])
-    # Get the corresponding 3D points
-    corners = [
-        vertices[min_x_idx],
-        vertices[max_x_idx],
-        vertices[min_y_idx],
-        vertices[max_y_idx],
-    ]
-    # Remove duplicates (in case min/max overlap)
-    unique_corners = []
-    for c in corners:
-        if not any(np.allclose(c, uc) for uc in unique_corners):
-            unique_corners.append(c)
-    return unique_corners
+def find_front_face_corners(vertices, debug_viz=False):
+    print("Starting corner detection...")
+    try:
+        # Project vertices onto XY plane
+        xy = vertices[:, :2]
+        print(f"Projected {len(xy)} vertices to XY plane")
+        
+        if debug_viz:
+            # Create a new scene for debug visualization
+            debug_scene = trimesh.Scene()
+            
+            # Create points for visualization (add z=0 for all points)
+            projected_points = np.column_stack((xy, np.zeros(len(xy))))
+            
+            # Add points to scene
+            for point in projected_points:
+                sphere = trimesh.creation.uv_sphere(radius=0.005)
+                sphere.vertices += point
+                sphere.visual.face_colors = [100, 100, 100, 255]  # Gray color for all points
+                debug_scene.add_geometry(sphere)
+        
+        # Find min/max X and Y with debug info
+        min_x_idx = np.argmin(xy[:, 0])
+        max_x_idx = np.argmax(xy[:, 0])
+        min_y_idx = np.argmin(xy[:, 1])
+        max_y_idx = np.argmax(xy[:, 1])
+        
+        # Get the corresponding 3D points
+        corners = [
+            vertices[min_x_idx],  # min x
+            vertices[max_x_idx],  # max x
+            vertices[min_y_idx],  # min y
+            vertices[max_y_idx],  # max y
+        ]
+        
+        if debug_viz:
+            # Add corner points to debug visualization in a different color
+            for corner in corners:
+                sphere = trimesh.creation.uv_sphere(radius=0.01)
+                sphere.vertices += [corner[0], corner[1], 0]  # Project to z=0
+                sphere.visual.face_colors = [255, 0, 0, 255]  # Red color for corners
+                debug_scene.add_geometry(sphere)
+            
+            # Show the debug visualization
+            debug_scene.show()
+        
+        # More efficient duplicate removal
+        unique_corners = []
+        seen = set()
+        for c in corners:
+            c_tuple = tuple(c)
+            if c_tuple not in seen:
+                seen.add(c_tuple)
+                unique_corners.append(c)
+        
+        print(f"Found {len(unique_corners)} unique corners")
+        return unique_corners
+        
+    except Exception as e:
+        print(f"Error in find_front_face_corners: {str(e)}")
+        return []
+        
+    except Exception as e:
+        print(f"Error in find_front_face_corners: {str(e)}")
+        return []
 
 def rotate_mesh_to_face_forward(mesh, target_axis=np.array([0, 1, 0])):
     # Find the normal of the front face (largest area face)
@@ -107,21 +151,55 @@ def load_and_visualize_obj(obj_path):
     # Rotate aligned mesh so its front face is facing +Y
     aligned_mesh = rotate_mesh_to_face_forward(aligned_mesh, target_axis=np.array([0, 1, 0]))
     
+    # Create debug visualization of projected points
+    debug_scene = trimesh.Scene()
+    
+    # Add the 3D mesh first
+    debug_scene.add_geometry(aligned_mesh)
+    
+    # Project vertices onto XY plane and sample points (take every 10th point)
+    sampled_vertices = aligned_mesh.vertices[::10]  # Sample every 10th point
+    xy = sampled_vertices[:, :2]
+    z = sampled_vertices[:, 2]  # Get Z coordinates for depth coloring
+    
+    # Normalize Z values to [0, 1] range for coloring
+    z_normalized = (z - z.min()) / (z.max() - z.min())
+    
+    # Create colors based on depth (blue->red gradient)
+    colors = np.zeros((len(z), 4))
+    colors[:, 0] = z_normalized * 255  # Red channel increases with depth
+    colors[:, 2] = (1 - z_normalized) * 255  # Blue channel decreases with depth
+    colors[:, 3] = 255  # Alpha channel
+    
+    projected_points = np.column_stack((xy, np.zeros(len(xy))))
+    
+    # Create a single point cloud for projected points
+    point_cloud = trimesh.PointCloud(projected_points)
+    point_cloud.colors = colors.astype(np.uint8)
+    debug_scene.add_geometry(point_cloud)
+    
+    
+    # Add coordinate axes for reference
+    axis_length = max(aligned_mesh.extents) * 1.2  # Scale axes to mesh size
+    axes = trimesh.creation.axis(origin_size=0.01, axis_length=axis_length)
+    debug_scene.add_geometry(axes)
+    
+    print(f"Showing mesh and projected points visualization ({len(xy)} points) - close window to continue")
+    debug_scene.show()
+    
     # Get corners from aligned mesh
     aligned_corners = find_front_face_corners(aligned_mesh.vertices)
     
-    # Create visualization scene
+    # Create final visualization scene
     scene = trimesh.Scene()
-    
-    # Add aligned mesh and its corners (green)
     scene.add_geometry(aligned_mesh)
     for point in aligned_corners:
         sphere = trimesh.creation.uv_sphere(radius=0.01)
         sphere.vertices += point
-        sphere.visual.face_colors = [0, 255, 0, 255]  # Green
+        sphere.visual.face_colors = [0, 255, 0, 255]
         scene.add_geometry(sphere)
 
-    # Show the scene
+    print("Showing final mesh with corners")
     scene.show()
     return aligned_corners
 
