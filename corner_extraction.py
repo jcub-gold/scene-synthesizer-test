@@ -53,60 +53,61 @@ def find_front_face_corners(vertices, debug_viz=False):
         xy = vertices[:, :2]
         print(f"Projected {len(xy)} vertices to XY plane")
         
+        # Split points into quadrants and find furthest point in each
+        corners = []
+        
+        # Calculate distances from origin for each point
+        distances = np.linalg.norm(xy, axis=1)
+        
+        # For each quadrant, find point furthest from origin
+        # Quadrant 1 (++): x > 0, y > 0
+        q1_mask = (xy[:, 0] >= 0) & (xy[:, 1] >= 0)
+        if np.any(q1_mask):
+            q1_idx = np.argmax(distances * q1_mask)
+            corners.append(vertices[q1_idx])
+            
+        # Quadrant 2 (-+): x < 0, y > 0
+        q2_mask = (xy[:, 0] < 0) & (xy[:, 1] >= 0)
+        if np.any(q2_mask):
+            q2_idx = np.argmax(distances * q2_mask)
+            corners.append(vertices[q2_idx])
+            
+        # Quadrant 3 (--): x < 0, y < 0
+        q3_mask = (xy[:, 0] < 0) & (xy[:, 1] < 0)
+        if np.any(q3_mask):
+            q3_idx = np.argmax(distances * q3_mask)
+            corners.append(vertices[q3_idx])
+            
+        # Quadrant 4 (+-): x > 0, y < 0
+        q4_mask = (xy[:, 0] >= 0) & (xy[:, 1] < 0)
+        if np.any(q4_mask):
+            q4_idx = np.argmax(distances * q4_mask)
+            corners.append(vertices[q4_idx])
+        
         if debug_viz:
-            # Create a new scene for debug visualization
+            # Create debug visualization
             debug_scene = trimesh.Scene()
             
-            # Create points for visualization (add z=0 for all points)
+            # Add all projected points in gray
             projected_points = np.column_stack((xy, np.zeros(len(xy))))
-            
-            # Add points to scene
             for point in projected_points:
                 sphere = trimesh.creation.uv_sphere(radius=0.005)
                 sphere.vertices += point
-                sphere.visual.face_colors = [100, 100, 100, 255]  # Gray color for all points
+                sphere.visual.face_colors = [100, 100, 100, 100]  # Semi-transparent gray
                 debug_scene.add_geometry(sphere)
-        
-        # Find min/max X and Y with debug info
-        min_x_idx = np.argmin(xy[:, 0])
-        max_x_idx = np.argmax(xy[:, 0])
-        min_y_idx = np.argmin(xy[:, 1])
-        max_y_idx = np.argmax(xy[:, 1])
-        
-        # Get the corresponding 3D points
-        corners = [
-            vertices[min_x_idx],  # min x
-            vertices[max_x_idx],  # max x
-            vertices[min_y_idx],  # min y
-            vertices[max_y_idx],  # max y
-        ]
-        
-        if debug_viz:
-            # Add corner points to debug visualization in a different color
+            
+            # Add corner points in red
             for corner in corners:
                 sphere = trimesh.creation.uv_sphere(radius=0.01)
                 sphere.vertices += [corner[0], corner[1], 0]  # Project to z=0
-                sphere.visual.face_colors = [255, 0, 0, 255]  # Red color for corners
+                sphere.visual.face_colors = [255, 0, 0, 255]  # Red
                 debug_scene.add_geometry(sphere)
             
             # Show the debug visualization
             debug_scene.show()
         
-        # More efficient duplicate removal
-        unique_corners = []
-        seen = set()
-        for c in corners:
-            c_tuple = tuple(c)
-            if c_tuple not in seen:
-                seen.add(c_tuple)
-                unique_corners.append(c)
-        
-        print(f"Found {len(unique_corners)} unique corners")
-        return unique_corners
-        
-    except Exception as e:
-        print(f"Error in find_front_face_corners: {str(e)}")
-        return []
+        print(f"Found {len(corners)} corners by quadrant distance")
+        return corners
         
     except Exception as e:
         print(f"Error in find_front_face_corners: {str(e)}")
@@ -207,7 +208,7 @@ def load_and_visualize_obj(obj_path):
     debug_scene.add_geometry(axes)
     
     print(f"Showing mesh and projected points visualization ({len(xy)} points) - close window to continue")
-    debug_scene.show()
+    # debug_scene.show()
     
     # Get corners from aligned mesh
     aligned_corners = find_front_face_corners(aligned_mesh.vertices)
