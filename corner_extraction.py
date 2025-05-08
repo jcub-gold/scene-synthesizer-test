@@ -111,6 +111,7 @@ def find_front_face_corners(vertices, debug_viz=False):
     except Exception as e:
         print(f"Error in find_front_face_corners: {str(e)}")
         return []
+    return current_mesh
 
 def rotate_mesh_to_face_forward(mesh, target_axis=np.array([0, 1, 0])):
     # Find the normal of the front face (largest area face)
@@ -119,6 +120,7 @@ def rotate_mesh_to_face_forward(mesh, target_axis=np.array([0, 1, 0])):
     normal = mesh.face_normals[largest_face_idx]
     normal = normal / np.linalg.norm(normal)
     target_axis = target_axis / np.linalg.norm(target_axis)
+    
     # Compute rotation axis and angle
     axis = np.cross(normal, target_axis)
     if np.linalg.norm(axis) < 1e-8:
@@ -130,6 +132,7 @@ def rotate_mesh_to_face_forward(mesh, target_axis=np.array([0, 1, 0])):
         R = trimesh.transformations.rotation_matrix(angle, axis)
         mesh_rot = mesh.copy()
         mesh_rot.apply_transform(R)
+    
     # Apply 90 degree rotation around Y axis (in positive direction)
     R_y90 = trimesh.transformations.rotation_matrix(np.pi/2, [0, 1, 0])
     mesh_rot.apply_transform(R_y90)
@@ -137,6 +140,25 @@ def rotate_mesh_to_face_forward(mesh, target_axis=np.array([0, 1, 0])):
     # Apply 180 degree rotation around X axis to flip upright
     R_x180 = trimesh.transformations.rotation_matrix(np.pi, [1, 0, 0])
     mesh_rot.apply_transform(R_x180)
+    
+    # Center mesh in X and Z axes
+    vertices = mesh_rot.vertices
+    
+    # Center X
+    x_coords = vertices[:, 0]
+    x_min, x_max = np.min(x_coords), np.max(x_coords)
+    x_center = (x_max + x_min) / 2
+    
+    # Center Y
+    y_coords = vertices[:, 1]
+    y_min, y_max = np.min(y_coords), np.max(y_coords)
+    y_center = (y_max + y_min) / 2
+    
+    # Create translation matrix for X and Y centering
+    T = np.eye(4)
+    T[0, 3] = -x_center  # X offset
+    T[1, 3] = -y_center  # Y offset
+    mesh_rot.apply_transform(T)
     
     return mesh_rot
 
