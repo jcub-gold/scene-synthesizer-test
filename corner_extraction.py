@@ -46,43 +46,41 @@ def align_mesh(mesh):
     
     return best_mesh, best_angles
 
-def find_front_face_corners(vertices, debug_viz=False):
+def find_front_face_corners(vertices, debug_viz=False, back_optimization=True):
     print("Starting corner detection...")
     try:
         # Project vertices onto XY plane
         xy = vertices[:, :2]
+        z = vertices[:, 2]  # Get Z coordinates
         print(f"Projected {len(xy)} vertices to XY plane")
         
         # Split points into quadrants and find furthest point in each
         corners = []
         
-        # Calculate distances from origin for each point
-        distances = np.linalg.norm(xy, axis=1)
+        # Calculate distances from origin for each point in XY plane
+        # Calculate distances from origin for each point in XY plane
+        xy_distances = np.linalg.norm(xy, axis=1)
+        # Normalize Z coordinates to [0,1] range for scoring
+        z_normalized = (z - np.min(z)) / (np.max(z) - np.min(z))
+        scores = xy_distances * (1 + 5 * z_normalized )
         
-        # For each quadrant, find point furthest from origin
-        # Quadrant 1 (++): x > 0, y > 0
-        q1_mask = (xy[:, 0] >= 0) & (xy[:, 1] >= 0)
-        if np.any(q1_mask):
-            q1_idx = np.argmax(distances * q1_mask)
-            corners.append(vertices[q1_idx])
-            
-        # Quadrant 2 (-+): x < 0, y > 0
-        q2_mask = (xy[:, 0] < 0) & (xy[:, 1] >= 0)
-        if np.any(q2_mask):
-            q2_idx = np.argmax(distances * q2_mask)
-            corners.append(vertices[q2_idx])
-            
-        # Quadrant 3 (--): x < 0, y < 0
-        q3_mask = (xy[:, 0] < 0) & (xy[:, 1] < 0)
-        if np.any(q3_mask):
-            q3_idx = np.argmax(distances * q3_mask)
-            corners.append(vertices[q3_idx])
-            
-        # Quadrant 4 (+-): x > 0, y < 0
-        q4_mask = (xy[:, 0] >= 0) & (xy[:, 1] < 0)
-        if np.any(q4_mask):
-            q4_idx = np.argmax(distances * q4_mask)
-            corners.append(vertices[q4_idx])
+        
+        # For each quadrant, find point with highest score
+        quadrants = [
+            ((xy[:, 0] >= 0) & (xy[:, 1] >= 0)),  # Q1 (++)
+            ((xy[:, 0] < 0) & (xy[:, 1] >= 0)),   # Q2 (-+)
+            ((xy[:, 0] < 0) & (xy[:, 1] < 0)),    # Q3 (--)
+            ((xy[:, 0] >= 0) & (xy[:, 1] < 0))    # Q4 (+-)
+        ]
+        
+        for quadrant_mask in quadrants:
+            if np.any(quadrant_mask):
+                # Find corner with highest score in this quadrant
+                quadrant_scores = scores * quadrant_mask
+                corner_idx = np.argmax(quadrant_scores)
+                corners.append(vertices[corner_idx])
+        
+        # ... rest of the visualization code remains the same ...
         
         if debug_viz:
             # Create debug visualization
@@ -93,17 +91,16 @@ def find_front_face_corners(vertices, debug_viz=False):
             for point in projected_points:
                 sphere = trimesh.creation.uv_sphere(radius=0.005)
                 sphere.vertices += point
-                sphere.visual.face_colors = [100, 100, 100, 100]  # Semi-transparent gray
+                sphere.visual.face_colors = [100, 100, 100, 100]
                 debug_scene.add_geometry(sphere)
             
             # Add corner points in red
             for corner in corners:
                 sphere = trimesh.creation.uv_sphere(radius=0.01)
-                sphere.vertices += [corner[0], corner[1], 0]  # Project to z=0
-                sphere.visual.face_colors = [255, 0, 0, 255]  # Red
+                sphere.vertices += [corner[0], corner[1], 0]
+                sphere.visual.face_colors = [255, 0, 0, 255]
                 debug_scene.add_geometry(sphere)
             
-            # Show the debug visualization
             debug_scene.show()
         
         print(f"Found {len(corners)} corners by quadrant distance")
@@ -112,8 +109,7 @@ def find_front_face_corners(vertices, debug_viz=False):
     except Exception as e:
         print(f"Error in find_front_face_corners: {str(e)}")
         return []
-    return current_mesh
-
+    
 def rotate_mesh_to_face_forward(mesh, target_axis=np.array([0, 1, 0])):
     # Find the normal of the front face (largest area face)
     face_areas = mesh.area_faces

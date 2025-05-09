@@ -10,15 +10,16 @@ def extract_urdf_front_face_corners(boxes):
     # Get extremal points
     min_x = np.min(vertices[:, 0])
     max_x = np.max(vertices[:, 0])
+    max_y = np.min(vertices[:, 1])  # Get the maximum y-value for the front face
     min_z = np.min(vertices[:, 2])
     max_z = np.max(vertices[:, 2])
     
     # Find actual vertices closest to the extremal combinations
     target_points = np.array([
-        [max_x, 0, max_z],  # Top right
-        [min_x, 0, max_z],  # Top left
-        [min_x, 0, min_z],  # Bottom left
-        [max_x, 0, min_z],  # Bottom right
+        [max_x, max_y, max_z],  # Top right
+        [min_x, max_y, max_z],  # Top left
+        [min_x, max_y, min_z],  # Bottom left
+        [max_x, max_y, min_z],  # Bottom right
     ])
     
     corners = []
@@ -30,7 +31,6 @@ def extract_urdf_front_face_corners(boxes):
         corners.append(vertices[closest_idx])
     
     return np.array(corners)
-
 # Parse URDF
 tree = ET.parse("exports/drawer.urdf")
 root = tree.getroot()
