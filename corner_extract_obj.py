@@ -159,7 +159,7 @@ def rotate_mesh_to_face_forward(mesh, target_axis=np.array([0, 1, 0])):
     
     return mesh_rot
 
-def load_and_visualize_obj(obj_path):
+def load_and_visualize_obj(obj_path, debug_viz=True, scene_viz=True):
     # Load the mesh
     mesh = trimesh.load(obj_path)
     
@@ -204,7 +204,8 @@ def load_and_visualize_obj(obj_path):
     debug_scene.add_geometry(axes)
     
     print(f"Showing mesh and projected points visualization ({len(xy)} points) - close window to continue")
-    # debug_scene.show()
+    if debug_viz:
+        debug_scene.show()
     
     # Get corners from aligned mesh
     aligned_corners = find_front_face_corners(aligned_mesh.vertices)
@@ -219,12 +220,13 @@ def load_and_visualize_obj(obj_path):
         scene.add_geometry(sphere)
 
     print("Showing final mesh with corners")
-    scene.show()
+    if scene_viz:
+        scene.show()
     return aligned_corners
 
 if __name__ == "__main__":
     obj_path = "scene/object_3_state_1_aligned_mesh.obj"
-    aligned_corners = load_and_visualize_obj(obj_path)
+    aligned_corners = load_and_visualize_obj(obj_path, debug_viz=True)
     if aligned_corners is not None:
         print("\nAligned mesh corner points coordinates:")
         for i, corner in enumerate(aligned_corners):
