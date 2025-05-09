@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='ASCII'?>
+<robot name="Scene">
+  <link name="lower_cabinet_corpus">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.015160000000000003" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual name="lower_cabinet_back">
+      <geometry>
+        <box size="0.46 0.02 0.14" />
+      </geometry>
+      <origin xyz="0.0 0.305 0.07" rpy="0.0 -0.0 0.0" />
+      <material name="lower_cabinet_back_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="lower_cabinet_left">
+      <geometry>
+        <box size="0.02 0.59 0.14" />
+      </geometry>
+      <origin xyz="-0.22 0.0 0.07" rpy="0.0 -0.0 0.0" />
+      <material name="lower_cabinet_left_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="lower_cabinet_right">
+      <geometry>
+        <box size="0.02 0.59 0.14" />
+      </geometry>
+      <origin xyz="0.22 0.0 0.07" rpy="0.0 -0.0 0.0" />
+      <material name="lower_cabinet_right_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="lower_cabinet_surface_0_0">
+      <geometry>
+        <box size="0.42000000000000004 0.59 0.02" />
+      </geometry>
+      <origin xyz="0.0 0.0 0.010000000000000018" rpy="0.0 -0.0 0.0" />
+      <material name="lower_cabinet_surface_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="lower_cabinet_top">
+      <geometry>
+        <box size="0.46 0.61 0.02" />
+      </geometry>
+      <origin xyz="0.0 0.01 0.15" rpy="0.0 -0.0 0.0" />
+      <material name="lower_cabinet_top_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <collision name="lower_cabinet_back">
+      <geometry>
+        <box size="0.46 0.02 0.14" />
+      </geometry>
+      <origin xyz="0.0 0.305 0.07" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="lower_cabinet_left">
+      <geometry>
+        <box size="0.02 0.59 0.14" />
+      </geometry>
+      <origin xyz="-0.22 0.0 0.07" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="lower_cabinet_right">
+      <geometry>
+        <box size="0.02 0.59 0.14" />
+      </geometry>
+      <origin xyz="0.22 0.0 0.07" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="lower_cabinet_surface_0_0">
+      <geometry>
+        <box size="0.42000000000000004 0.59 0.02" />
+      </geometry>
+      <origin xyz="0.0 0.0 0.010000000000000018" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="lower_cabinet_top">
+      <geometry>
+        <box size="0.46 0.61 0.02" />
+      </geometry>
+      <origin xyz="0.0 0.01 0.15" rpy="0.0 -0.0 0.0" />
+    </collision>
+  </link>
+  <link name="lower_cabinet_drawer_0_0">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.10000000000000003" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual><geometry><mesh filename="drawers/warped_drawer.obj" /></geometry><material name="drawer_material"><color rgba="0.8 0.8 0.8 1.0" /></material></visual><collision><geometry><box size="0.456 0.544 0.156" /></geometry></collision></link>
+  <link name="world" />
+  <link name="lower_cabinet" />
+  <joint name="lower_cabinet_world_fixed_joint" type="fixed">
+    <parent link="world" />
+    <child link="lower_cabinet" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="lower_cabinet_corpus_to_drawer_0_0" type="prismatic">
+    <parent link="lower_cabinet_corpus" />
+    <child link="lower_cabinet_drawer_0_0" />
+    <origin xyz="0.0 -0.295 0.08000000000000002" rpy="0.0 -0.0 0.0" />
+    <axis xyz="0 -1 0" />
+    <limit effort="1000.0" velocity="1.0" lower="0.0" upper="0.49410000000000004" />
+  </joint>
+  <joint name="lower_cabinet_origin_joint" type="fixed">
+    <parent link="lower_cabinet" />
+    <child link="lower_cabinet_corpus" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+  </joint>
+</robot>
