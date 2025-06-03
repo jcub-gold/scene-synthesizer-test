@@ -8,6 +8,7 @@ from corner_extract_obj import align_mesh  # for AABB alignment
 from trimesh.transformations import rotation_matrix
 from trimesh.boolean import intersection as boolean_intersection
 from AddRealisticMesh import AddRealisticMesh
+from itertools import permutations, product
 
 
 class ARMDrawer(AddRealisticMesh):
@@ -87,79 +88,94 @@ class ARMDrawer(AddRealisticMesh):
         
         self.urdf_corners = np.array(corners)
 
-    def _refine_rotation_all_90_axes(self, sample_count: int = 1000):
+    def _refine_rotation_all_90_axes(self, sample_count: int = 100000):
         """
-        Try all 24 “90° only” orientations around the principal axes (±X↔±Y↔±Z),
-        and pick the one that minimizes the sum of distances from sampled OBJ points
-        to the nearest point on the URDF mesh.
-
-        Preconditions:
-          - self.mesh (OBJ) and self.urdf (box) have already been:
-              1) AABB‐aligned via align_mesh(...)
-              2) Centered at the origin via simple_align_mesh()
-
-        For each of the 24 rotation matrices R ∈ {±basis permutations | det=+1},
-        we:
-          a) Apply R (as a 4×4 homogeneous transform) to a copy of self.mesh.
-          b) Sample `sample_count` points on that rotated mesh.
-          c) Compute total_dist = sum( distance(pt, self.urdf) ) via nearest.on_surface(pts).
-        We pick the R that yields the **smallest** total_dist and set self.mesh accordingly.
-
-        sample_count: number of points to sample on each candidate mesh (e.g. 1000–5000).
+        Instead of brute‐forcing all 24 axis swaps, we:
+        1) Look at each mesh’s AABB.extents (dx, dy, dz) after AABB‐alignment & centering.
+        2) Find the permutation of those three dims that best matches two of the three URDF dims—
+            i.e. we compute abs(permuted_mesh_extents - urdf_extents), sort those three differences,
+            and take the sum of the two smallest differences as our “score.” This discards the single
+            largest‐mismatch dimension as the “outlier.”
+        3) Build the corresponding permutation matrix P.
+        4) Loop over the 4 possible sign‐flip matrices S = diag(±1,±1,±1) with det(S·P)=+1.
+        5) For each R = S·P, apply to the OBJ, sample sample_count points, compute
+            sum of nearest‐point distances to URDF, and pick the best among the 4.
         """
         if self.mesh is None or self.urdf is None:
             raise RuntimeError("Call set_mesh(), set_urdf() and simple_align_mesh() first.")
 
-        # 1) Precompute the 24 “± unit‐axis permutations with det=+1”
-        rots_3x3 = []
-        from itertools import permutations, product
+        # --- 1) Get each mesh’s AABB extents (already AABB‐aligned + centered) ---
+        mesh_dims = self.mesh.bounding_box.extents   # array([dx, dy, dz])
+        urdf_dims = self.urdf.bounding_box.extents   # array([Dx, Dy, Dz])
 
-        for perm in permutations([0, 1, 2], 3):  # all 6 axis permutations
-            for signs in product([1, -1], repeat=3):  # all 8 sign combos
-                M = np.zeros((3, 3), dtype=np.float64)
-                # Place ±1 in each row i at column perm[i]
-                for i in range(3):
-                    M[i, perm[i]] = signs[i]
-                if np.linalg.det(M) > 0.5:  # exactly +1 (within floating tolerance)
-                    rots_3x3.append(M)
-        # Now rots_3x3 is length 24
+        # --- 2) Find the permutation of (dx,dy,dz) that best matches (Dx,Dy,Dz) on two dims ---
+        best_perm = None
+        best_score = np.inf
+
+        # We will measure score(permutation) = sum of the two smallest entries of abs(permuted - urdf_dims).
+        for perm in permutations([0, 1, 2], 3):
+            permuted = np.array([
+                mesh_dims[perm[0]],
+                mesh_dims[perm[1]],
+                mesh_dims[perm[2]]
+            ])
+            diffs = np.abs(permuted - urdf_dims)         # length‐3 array of absolute differences
+            diffs_sorted = np.sort(diffs)                # sort ascending
+            score = diffs_sorted[0] + diffs_sorted[1]    # sum of the two smallest diffs
+            if score < best_score:
+                best_score = score
+                best_perm = perm
+
+        # Build the 3×3 permutation matrix P so that [x';y';z'] = P @ [x;y;z]
+        P = np.zeros((3, 3), dtype=np.float64)
+        for row in range(3):
+            col = best_perm[row]
+            P[row, col] = 1.0
+
+        print(f"Chosen permutation (mesh→URDF dims): {best_perm}")
+        print(f"Mesh dims permuted: {[mesh_dims[i] for i in best_perm]}, URDF dims: {urdf_dims}")
+
+        # --- 3) Build the 4 sign‐flip rotations R = S·P with det(R)=+1 ---
+        candidate_Rs = []
+        for signs in product([1.0, -1.0], repeat=3):
+            S = np.diag(signs)
+            R = S.dot(P)
+            candidate_Rs.append(R)
+
+        # At this point, candidate_Rs has exactly 4 matrices (each 3×3 with ±1 entries).
 
         best_total = np.inf
-        best_mesh = None
-        best_rot  = None
+        best_mesh_aligned = None
+        best_R = None
 
         base_mesh = self.mesh.copy()  # should already be AABB‐aligned + centered
 
-        # 2) Loop over all 24
-        for idx, M3 in enumerate(rots_3x3):
-            # Convert 3x3 into 4x4 homogeneous transform
+        # --- 4) Test each of the 4 R candidates by sampling and measuring distance to URDF ---
+        for idx, R3 in enumerate(candidate_Rs):
             R_hom = np.eye(4, dtype=np.float64)
-            R_hom[:3, :3] = M3
+            R_hom[:3, :3] = R3
 
             candidate = base_mesh.copy()
             candidate.apply_transform(R_hom)
 
-            # 3) Sample points on candidate surface
-            pts = candidate.sample(sample_count)  # shape (N,3)
-
-            # 4) Compute cumulative distance to URDF
+            pts = candidate.sample(sample_count)            # sample `sample_count` points
             total_dist = cumulative_distance_to_mesh(pts, self.urdf)
 
-            print(f"  [{idx+1:02d}/24]  total_dist = {total_dist:.6f}")
+            print(f"  [flip {idx+1}/4] total_dist = {total_dist:.6f}")
 
             if total_dist < best_total:
                 best_total = total_dist
-                best_mesh = candidate.copy()
-                best_rot = M3.copy()
+                best_mesh_aligned = candidate.copy()
+                best_R = R3.copy()
 
-        if best_mesh is None:
-            raise RuntimeError("No valid rotation found among the 24 candidates.")
+        if best_mesh_aligned is None:
+            raise RuntimeError("No valid rotation found among the 4 candidates.")
 
-        # 5) Report and store
+        # --- 5) Store and report the result ---
         print(f"refine_rotation_all_90_axes: best total_dist = {best_total:.6f}")
-        print(f"Best 3×3 rotation matrix:\n{best_rot}")
+        print(f"Best 3×3 rotation matrix:\n{best_R}")
 
-        self.mesh = best_mesh.copy()
+        self.mesh = best_mesh_aligned.copy()
 
     def _simple_align_mesh(self):
         """

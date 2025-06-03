@@ -20,6 +20,9 @@ def align_mesh(mesh):
         [0, 0, np.pi/2],  # 90° around z
         [np.pi/4, np.pi/4, np.pi/4]  # 45° all axes
     ]
+
+    for _ in range(5):  # three extra random guesses
+        starting_angles.append(list(np.random.uniform(0, 2*np.pi, size=3)))
     
     best_volume = float('inf')
     best_angles = None

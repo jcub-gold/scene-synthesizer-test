@@ -1,0 +1,231 @@
+<?xml version='1.0' encoding='ASCII'?>
+<robot name="Scene">
+  <link name="cabinet_corpus">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.054318599999999995"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <visual name="cabinet_back">
+      <geometry>
+        <box size="0.958 0.02 0.313"/>
+      </geometry>
+      <origin xyz="0.0 0.489 0.1565" rpy="0.0 -0.0 0.0"/>
+      <material name="cabinet_back_main_color">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+      </material>
+    </visual>
+    <visual name="cabinet_left">
+      <geometry>
+        <box size="0.02 0.958 0.313"/>
+      </geometry>
+      <origin xyz="-0.469 0.0 0.1565" rpy="0.0 -0.0 0.0"/>
+      <material name="cabinet_left_main_color">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+      </material>
+    </visual>
+    <visual name="cabinet_right">
+      <geometry>
+        <box size="0.02 0.958 0.313"/>
+      </geometry>
+      <origin xyz="0.469 0.0 0.1565" rpy="0.0 -0.0 0.0"/>
+      <material name="cabinet_right_main_color">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+      </material>
+    </visual>
+    <visual name="cabinet_surface_0_0">
+      <geometry>
+        <box size="0.9179999999999999 0.958 0.02"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.009999999999999962" rpy="0.0 -0.0 0.0"/>
+      <material name="cabinet_surface_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+      </material>
+    </visual>
+    <visual name="cabinet_top">
+      <geometry>
+        <box size="0.958 0.978 0.02"/>
+      </geometry>
+      <origin xyz="0.0 0.01 0.323" rpy="0.0 -0.0 0.0"/>
+      <material name="cabinet_top_main_color">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+      </material>
+    </visual>
+    <collision name="cabinet_back">
+      <geometry>
+        <box size="0.958 0.02 0.313"/>
+      </geometry>
+      <origin xyz="0.0 0.489 0.1565" rpy="0.0 -0.0 0.0"/>
+    </collision>
+    <collision name="cabinet_left">
+      <geometry>
+        <box size="0.02 0.958 0.313"/>
+      </geometry>
+      <origin xyz="-0.469 0.0 0.1565" rpy="0.0 -0.0 0.0"/>
+    </collision>
+    <collision name="cabinet_right">
+      <geometry>
+        <box size="0.02 0.958 0.313"/>
+      </geometry>
+      <origin xyz="0.469 0.0 0.1565" rpy="0.0 -0.0 0.0"/>
+    </collision>
+    <collision name="cabinet_surface_0_0">
+      <geometry>
+        <box size="0.9179999999999999 0.958 0.02"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.009999999999999962" rpy="0.0 -0.0 0.0"/>
+    </collision>
+    <collision name="cabinet_top">
+      <geometry>
+        <box size="0.958 0.978 0.02"/>
+      </geometry>
+      <origin xyz="0.0 0.01 0.323" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="cabinet_drawer_0_0">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <visual name="cabinet_drawer_0_0_board_0">
+      <geometry>
+        <box size="0.954 0.02 0.32900000000000007"/>
+      </geometry>
+      <origin xyz="0.0 -0.01 0.0" rpy="0.0 -0.0 0.0"/>
+      <material name="cabinet_drawer_0_0_board_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+      </material>
+    </visual>
+    <visual name="cabinet_drawer_0_0_board_1">
+      <geometry>
+        <box size="0.8979999999999999 0.8552 0.005"/>
+      </geometry>
+      <origin xyz="0.0 0.4276 -0.139" rpy="0.0 -0.0 0.0"/>
+      <material name="cabinet_drawer_0_0_board_1_main_color">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+      </material>
+    </visual>
+    <visual name="cabinet_drawer_0_0_board_2">
+      <geometry>
+        <box size="0.005 0.8552 0.28300000000000003"/>
+      </geometry>
+      <origin xyz="-0.45149999999999996 0.4276 0.0" rpy="0.0 -0.0 0.0"/>
+      <material name="cabinet_drawer_0_0_board_2_main_color">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+      </material>
+    </visual>
+    <visual name="cabinet_drawer_0_0_board_3">
+      <geometry>
+        <box size="0.005 0.8552 0.28300000000000003"/>
+      </geometry>
+      <origin xyz="0.45149999999999996 0.4276 0.0" rpy="0.0 -0.0 0.0"/>
+      <material name="cabinet_drawer_0_0_board_3_main_color">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+      </material>
+    </visual>
+    <visual name="cabinet_drawer_0_0_board_4">
+      <geometry>
+        <box size="0.9079999999999999 0.005 0.28300000000000003"/>
+      </geometry>
+      <origin xyz="0.0 0.8577 0.0" rpy="0.0 -0.0 0.0"/>
+      <material name="cabinet_drawer_0_0_board_4_main_color">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+      </material>
+    </visual>
+    <visual name="cabinet_drawer_0_0_handle_part_0">
+      <geometry>
+        <box size="0.024 0.1682 0.024"/>
+      </geometry>
+      <origin xyz="-9.748438587302075e-35 -0.046 1.5920408388915591e-18" rpy="3.141592653589793 6.123233995736766e-17 1.5707963267948966"/>
+      <material name="cabinet_drawer_0_0_handle_part_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+      </material>
+    </visual>
+    <visual name="cabinet_drawer_0_0_handle_part_1">
+      <geometry>
+        <box size="0.013999999999999999 0.04 0.024"/>
+      </geometry>
+      <origin xyz="-0.06409999999999999 -0.027 -7.421359602832959e-18" rpy="3.141592653589793 6.123233995736766e-17 1.5707963267948966"/>
+      <material name="cabinet_drawer_0_0_handle_part_1_main_color">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+      </material>
+    </visual>
+    <visual name="cabinet_drawer_0_0_handle_part_2">
+      <geometry>
+        <box size="0.013999999999999999 0.04 0.024"/>
+      </geometry>
+      <origin xyz="0.06409999999999999 -0.027 8.278612362236106e-18" rpy="3.141592653589793 6.123233995736766e-17 1.5707963267948966"/>
+      <material name="cabinet_drawer_0_0_handle_part_2_main_color">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+      </material>
+    </visual>
+    <collision name="cabinet_drawer_0_0_board_0">
+      <geometry>
+        <box size="0.954 0.02 0.32900000000000007"/>
+      </geometry>
+      <origin xyz="0.0 -0.01 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+    <collision name="cabinet_drawer_0_0_board_1">
+      <geometry>
+        <box size="0.8979999999999999 0.8552 0.005"/>
+      </geometry>
+      <origin xyz="0.0 0.4276 -0.139" rpy="0.0 -0.0 0.0"/>
+    </collision>
+    <collision name="cabinet_drawer_0_0_board_2">
+      <geometry>
+        <box size="0.005 0.8552 0.28300000000000003"/>
+      </geometry>
+      <origin xyz="-0.45149999999999996 0.4276 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+    <collision name="cabinet_drawer_0_0_board_3">
+      <geometry>
+        <box size="0.005 0.8552 0.28300000000000003"/>
+      </geometry>
+      <origin xyz="0.45149999999999996 0.4276 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+    <collision name="cabinet_drawer_0_0_board_4">
+      <geometry>
+        <box size="0.9079999999999999 0.005 0.28300000000000003"/>
+      </geometry>
+      <origin xyz="0.0 0.8577 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+    <collision name="cabinet_drawer_0_0_handle_part_0">
+      <geometry>
+        <box size="0.024 0.1682 0.024"/>
+      </geometry>
+      <origin xyz="-9.748438587302075e-35 -0.046 1.5920408388915591e-18" rpy="3.141592653589793 6.123233995736766e-17 1.5707963267948966"/>
+    </collision>
+    <collision name="cabinet_drawer_0_0_handle_part_1">
+      <geometry>
+        <box size="0.013999999999999999 0.04 0.024"/>
+      </geometry>
+      <origin xyz="-0.06409999999999999 -0.027 -7.421359602832959e-18" rpy="3.141592653589793 6.123233995736766e-17 1.5707963267948966"/>
+    </collision>
+    <collision name="cabinet_drawer_0_0_handle_part_2">
+      <geometry>
+        <box size="0.013999999999999999 0.04 0.024"/>
+      </geometry>
+      <origin xyz="0.06409999999999999 -0.027 8.278612362236106e-18" rpy="3.141592653589793 6.123233995736766e-17 1.5707963267948966"/>
+    </collision>
+  </link>
+  <link name="world"/>
+  <link name="cabinet"/>
+  <joint name="cabinet_world_fixed_joint" type="fixed">
+    <parent link="world"/>
+    <child link="cabinet"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="cabinet_corpus_to_drawer_0_0" type="prismatic">
+    <parent link="cabinet_corpus"/>
+    <child link="cabinet_drawer_0_0"/>
+    <origin xyz="0.0 -0.479 0.16649999999999998" rpy="0.0 -0.0 0.0"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="1000.0" velocity="1.0" lower="0.0" upper="0.79218"/>
+  </joint>
+  <joint name="cabinet_origin_joint" type="fixed">
+    <parent link="cabinet"/>
+    <child link="cabinet_corpus"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+</robot>
