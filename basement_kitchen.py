@@ -7,20 +7,20 @@ from scene_synthesizer import procedural_assets as pa
 import numpy as np
 import math
 # # Assign to variables with rounding
-drawer_height = 0.333
-width = 0.958
-depth = 0.998
+# drawer_height = 0.333
+# width = 0.958
+# depth = 0.998
 
-cabinet_height = 1.003
+# cabinet_height = 1.003
 
-upper_cabinet_depth = depth / 2
-upper_cabinet_height = 2.103 
+# upper_cabinet_depth = depth / 2
+# upper_cabinet_height = 2.103 
 
-double_drawer_height = 1.5 * drawer_height
+# double_drawer_height = 1.5 * drawer_height
 
-upper_cabinet_translation = 0.9
+# upper_cabinet_translation = 0.9
 
-s = synth.Scene()
+# s = synth.Scene()
 
 def basement_kitchen(drawer_height: float, width: float, depth: float, cabinet_height: float, upper_cabinet_depth:float, upper_cabinet_height:float, double_drawer_height:float, upper_cabinet_translation:float, s, show=False):    
     rotated_cabinet_width = (depth - upper_cabinet_depth) / math.sin(math.pi / 4)
@@ -309,4 +309,4 @@ def basement_kitchen(drawer_height: float, width: float, depth: float, cabinet_h
 
     return assets
 
-basement_kitchen(drawer_height, width, depth, cabinet_height, upper_cabinet_depth, upper_cabinet_height, double_drawer_height, upper_cabinet_translation, s, show=True)
+# basement_kitchen(drawer_height, width, depth, cabinet_height, upper_cabinet_depth, upper_cabinet_height, double_drawer_height, upper_cabinet_translation, s, show=True)
