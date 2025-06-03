@@ -6,11 +6,18 @@ from trimesh.scene.lighting import Light
 import numpy as np
 from scene_synthesizer.assets import BoxAsset
 
-drawer = pa.BaseCabinetAsset(width=0.361, height = 0.178, depth=0.593, drawer_height=0.178, include_foot_panel=False, include_cabinet_doors=False, num_drawers_horizontal=1)
-
+lower_large_double_cabinet = pa.BaseCabinetAsset(
+    width=0.92, 
+    height=0.78, 
+    depth=0.63, 
+    num_drawers_vertical=0,
+    include_cabinet_doors=True,
+    include_foot_panel=False,
+    compartment_types=("door_left", "door_right")  # Explicitly specify door types
+)
 s = synth.Scene()
-s.add_object(drawer, 'drawer')
+s.add_object(lower_large_double_cabinet, 'drawer')
 
-# s.show()
+s.show()
 
-s.export('exports/drawer_extracted.urdf')
+# s.export('exports/drawer_extracted.urdf')
