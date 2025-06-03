@@ -39,22 +39,26 @@ def basement_kitchen(drawer_height: float, width: float, depth: float, cabinet_h
                                             num_drawers_vertical=0,
                                             include_cabinet_doors=True,
                                             include_foot_panel=False,
-                                            lower_compartment_types=("door_left",))
+                                            lower_compartment_types=("door_left",),
+                                            handle_offset=(cabinet_height * 0.35, width * 0.05))
     lower_right_cabinet = pa.BaseCabinetAsset(width=width, 
                                             height=cabinet_height, 
                                             depth=depth, 
                                             num_drawers_vertical=0,
                                             include_cabinet_doors=True,
                                             include_foot_panel=False,
-                                            lower_compartment_types=("door_right",))
+                                            lower_compartment_types=("door_right",),
+                                            handle_offset=(cabinet_height * 0.35, width * 0.05))
     upper_left_cabinet = pa.WallCabinetAsset(width=width, 
                                                     height=upper_cabinet_height, 
                                                     depth=upper_cabinet_depth, 
-                                                    compartment_types=("door_left",))
+                                                    compartment_types=("door_left",),
+                                                    handle_offset=(upper_cabinet_height * -0.4, width * 0.05))
     upper_right_cabinet = pa.WallCabinetAsset(width=width,
                                                     height=upper_cabinet_height, 
                                                     depth=upper_cabinet_depth, 
-                                                    compartment_types=("door_right",))
+                                                    compartment_types=("door_right",),
+                                                    handle_offset=(upper_cabinet_height * -0.4, width * 0.05))
     double_drawer = pa.drawer = pa.BaseCabinetAsset(width=width * 2, 
                                                     height=double_drawer_height, 
                                                     depth=depth, 
@@ -286,7 +290,7 @@ def basement_kitchen(drawer_height: float, width: float, depth: float, cabinet_h
     ])
 
     translation = np.eye(4)
-    translation[0, 3] = (depth - upper_cabinet_depth)   # move 0.998 units in X
+    translation[0, 3] = upper_cabinet_depth   # move 0.998 units in X
     # translation[1, 3] = -(depth - upper_cabinet_depth)  # move +0.998 along Y
     transform = translation @ rotation
 
@@ -300,6 +304,7 @@ def basement_kitchen(drawer_height: float, width: float, depth: float, cabinet_h
     )
 
     if show:
+        s.export('initial_scene/initial_scene_2.urdf')
         s.show()
 
     return assets

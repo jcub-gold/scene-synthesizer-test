@@ -2199,6 +2199,125 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
     </inertial>
     <visual><geometry><mesh filename="full_pipeline_simple/double_drawer_0.611_1.916_0.998.obj" /></geometry><material name="double_drawer_0.611_1.916_0.998_drawer_0_0_material"><color rgba="0.8 0.8 0.8 1.0" /></material></visual><collision><geometry><box size="1.912000 0.990300 0.607000" /></geometry><origin xyz="0.000000 0.365050 0.000000" rpy="0 0 0" /></collision></link>
+  <link name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_corpus">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.0645452550490508" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_back">
+      <geometry>
+        <box size="0.4921463197058371 0.01 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.0 0.45461940777125587 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_back_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_left">
+      <geometry>
+        <box size="0.01 0.8892388155425117 2.0930000000000004" />
+      </geometry>
+      <origin xyz="-0.24107315985291855 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_left_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_right">
+      <geometry>
+        <box size="0.01 0.8892388155425117 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.24107315985291855 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_right_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_shelf_0_0_0">
+      <geometry>
+        <box size="0.4721463197058371 0.8892388155425117 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 1.3986666666666672" rpy="0.0 -0.0 0.0" />
+      <material name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_shelf_0_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_shelf_0_0_1">
+      <geometry>
+        <box size="0.4721463197058371 0.8892388155425117 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.7043333333333337" rpy="0.0 -0.0 0.0" />
+      <material name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_shelf_0_0_1_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_surface_0_0">
+      <geometry>
+        <box size="0.4721463197058371 0.8892388155425117 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.005000000000000231" rpy="0.0 -0.0 0.0" />
+      <material name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_surface_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_top">
+      <geometry>
+        <box size="0.4921463197058371 0.8992388155425117 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.01 2.0980000000000003" rpy="0.0 -0.0 0.0" />
+      <material name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_top_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <collision name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_back">
+      <geometry>
+        <box size="0.4921463197058371 0.01 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.0 0.45461940777125587 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_left">
+      <geometry>
+        <box size="0.01 0.8892388155425117 2.0930000000000004" />
+      </geometry>
+      <origin xyz="-0.24107315985291855 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_right">
+      <geometry>
+        <box size="0.01 0.8892388155425117 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.24107315985291855 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_shelf_0_0_0">
+      <geometry>
+        <box size="0.4721463197058371 0.8892388155425117 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 1.3986666666666672" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_shelf_0_0_1">
+      <geometry>
+        <box size="0.4721463197058371 0.8892388155425117 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.7043333333333337" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_surface_0_0">
+      <geometry>
+        <box size="0.4721463197058371 0.8892388155425117 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.005000000000000231" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_top">
+      <geometry>
+        <box size="0.4921463197058371 0.8992388155425117 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.01 2.0980000000000003" rpy="0.0 -0.0 0.0" />
+    </collision>
+  </link>
+  <link name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_door_0_0">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.09999999999999999" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual><geometry><mesh filename="full_pipeline_simple/titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0.obj" /></geometry><material name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_door_0_0_material"><color rgba="0.8 0.8 0.8 1.0" /></material></visual><collision><geometry><box size="0.490146 0.168200 2.101000" /></geometry><origin xyz="0.245073 -0.026000 0.000000" rpy="0 0 0" /></collision></link>
   <link name="world" />
   <link name="drawer_0.333_0.958_0.998_0" />
   <link name="drawer_0.333_0.958_0.998_1" />
@@ -2221,6 +2340,7 @@
   <link name="upper_left_cabinet_1.003_0.958_0.65_3" />
   <link name="upper_right_cabinet_1.003_0.958_0.65_3" />
   <link name="double_drawer_0.611_1.916_0.998" />
+  <link name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0" />
   <joint name="drawer_0.333_0.958_0.998_0_world_fixed_joint" type="fixed">
     <parent link="world" />
     <child link="drawer_0.333_0.958_0.998_0" />
@@ -2576,6 +2696,23 @@
   <joint name="double_drawer_0.611_1.916_0.998_origin_joint" type="fixed">
     <parent link="double_drawer_0.611_1.916_0.998" />
     <child link="double_drawer_0.611_1.916_0.998_corpus" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_world_fixed_joint" type="fixed">
+    <parent link="world" />
+    <child link="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0" />
+    <origin xyz="3.8520000000000003 0.0 1.2330000000000003" rpy="0.0 -0.0 -0.7853981633974482" />
+  </joint>
+  <joint name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_corpus_to_door_0_0" type="revolute">
+    <parent link="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_corpus" />
+    <child link="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_door_0_0" />
+    <origin xyz="-0.24507315985291855 -0.4596194077712559 1.0515000000000003" rpy="0.0 -0.0 0.0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="1000.0" velocity="0.1" lower="0.0" upper="1.5707963267948966" />
+  </joint>
+  <joint name="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_origin_joint" type="fixed">
+    <parent link="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0" />
+    <child link="titled_upper_right_cabinet_2.103_0.4921463197058371_0.9192388155425117_0_corpus" />
     <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
   </joint>
 </robot>
