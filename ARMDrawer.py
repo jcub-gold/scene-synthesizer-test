@@ -11,7 +11,7 @@ from AddRealisticMesh import AddRealisticMesh
 
 
 class ARMDrawer(AddRealisticMesh):
-    def extract_corners(self, sample_count: int = 100000):
+    def extract_corners(self, sample_count: int = 100000, weight_y_axis: float = 5.0):
         self._simple_align_mesh()
         self._refine_rotation_all_90_axes(sample_count=sample_count)
         # MESH corners extraction
@@ -32,7 +32,7 @@ class ARMDrawer(AddRealisticMesh):
             # Normalize Y coordinates to [0,1] range for scoring
             y_min, y_max = np.min(y), np.max(y)
             y_normalized = (y_max - y) / (y_max - y_min)
-            scores = xz_distances * (1 + 5 * y_normalized)
+            scores = xz_distances * (1 + weight_y_axis * y_normalized)
 
             # For each quadrant in XZ plane, find point with highest score
             quadrants = [
