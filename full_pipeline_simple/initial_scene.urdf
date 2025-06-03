@@ -1158,6 +1158,1047 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
     </inertial>
     <visual><geometry><mesh filename="full_pipeline_simple/lower_right_cabinet_1.003_0.958_0.998_2.obj" /></geometry><material name="lower_right_cabinet_1.003_0.958_0.998_2_door_0_0_material"><color rgba="0.8 0.8 0.8 1.0" /></material></visual><collision><geometry><box size="0.954000 0.168200 0.999000" /></geometry><origin xyz="0.477000 -0.026000 0.000000" rpy="0 0 0" /></collision></link>
+  <link name="upper_left_cabinet_1.003_0.958_0.65_0_corpus">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.06948634" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_0_back">
+      <geometry>
+        <box size="0.958 0.01 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.0 0.32 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_0_back_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_0_left">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="-0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_0_left_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_0_right">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_0_right_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_0_shelf_0_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 1.3986666666666672" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_0_shelf_0_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_0_shelf_0_0_1">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.7043333333333337" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_0_shelf_0_0_1_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_0_surface_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.005000000000000231" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_0_surface_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_0_top">
+      <geometry>
+        <box size="0.958 0.63 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.01 2.0980000000000003" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_0_top_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_0_back">
+      <geometry>
+        <box size="0.958 0.01 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.0 0.32 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_0_left">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="-0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_0_right">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_0_shelf_0_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 1.3986666666666672" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_0_shelf_0_0_1">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.7043333333333337" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_0_surface_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.005000000000000231" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_0_top">
+      <geometry>
+        <box size="0.958 0.63 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.01 2.0980000000000003" rpy="0.0 -0.0 0.0" />
+    </collision>
+  </link>
+  <link name="upper_left_cabinet_1.003_0.958_0.65_0_door_0_0">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.09999999999999998" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual><geometry><mesh filename="full_pipeline_simple/upper_left_cabinet_1.003_0.958_0.65_0.obj" /></geometry><material name="upper_left_cabinet_1.003_0.958_0.65_0_door_0_0_material"><color rgba="0.8 0.8 0.8 1.0" /></material></visual><collision><geometry><box size="0.956000 0.168200 2.101000" /></geometry><origin xyz="-0.478000 -0.026000 0.000000" rpy="0 0 0" /></collision></link>
+  <link name="upper_right_cabinet_1.003_0.958_0.65_0_corpus">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.06948634" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_0_back">
+      <geometry>
+        <box size="0.958 0.01 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.0 0.32 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_0_back_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_0_left">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="-0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_0_left_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_0_right">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_0_right_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_0_shelf_0_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 1.3986666666666672" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_0_shelf_0_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_0_shelf_0_0_1">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.7043333333333337" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_0_shelf_0_0_1_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_0_surface_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.005000000000000231" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_0_surface_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_0_top">
+      <geometry>
+        <box size="0.958 0.63 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.01 2.0980000000000003" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_0_top_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_0_back">
+      <geometry>
+        <box size="0.958 0.01 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.0 0.32 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_0_left">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="-0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_0_right">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_0_shelf_0_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 1.3986666666666672" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_0_shelf_0_0_1">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.7043333333333337" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_0_surface_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.005000000000000231" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_0_top">
+      <geometry>
+        <box size="0.958 0.63 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.01 2.0980000000000003" rpy="0.0 -0.0 0.0" />
+    </collision>
+  </link>
+  <link name="upper_right_cabinet_1.003_0.958_0.65_0_door_0_0">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.09999999999999998" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual><geometry><mesh filename="full_pipeline_simple/upper_right_cabinet_1.003_0.958_0.65_0.obj" /></geometry><material name="upper_right_cabinet_1.003_0.958_0.65_0_door_0_0_material"><color rgba="0.8 0.8 0.8 1.0" /></material></visual><collision><geometry><box size="0.956000 0.168200 2.101000" /></geometry><origin xyz="0.478000 -0.026000 0.000000" rpy="0 0 0" /></collision></link>
+  <link name="upper_left_cabinet_1.003_0.958_0.65_1_corpus">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.06948634" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_1_back">
+      <geometry>
+        <box size="0.958 0.01 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.0 0.32 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_1_back_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_1_left">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="-0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_1_left_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_1_right">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_1_right_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_1_shelf_0_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 1.3986666666666672" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_1_shelf_0_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_1_shelf_0_0_1">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.7043333333333337" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_1_shelf_0_0_1_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_1_surface_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.005000000000000231" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_1_surface_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_1_top">
+      <geometry>
+        <box size="0.958 0.63 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.01 2.0980000000000003" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_1_top_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_1_back">
+      <geometry>
+        <box size="0.958 0.01 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.0 0.32 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_1_left">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="-0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_1_right">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_1_shelf_0_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 1.3986666666666672" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_1_shelf_0_0_1">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.7043333333333337" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_1_surface_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.005000000000000231" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_1_top">
+      <geometry>
+        <box size="0.958 0.63 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.01 2.0980000000000003" rpy="0.0 -0.0 0.0" />
+    </collision>
+  </link>
+  <link name="upper_left_cabinet_1.003_0.958_0.65_1_door_0_0">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.09999999999999998" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual><geometry><mesh filename="full_pipeline_simple/upper_left_cabinet_1.003_0.958_0.65_1.obj" /></geometry><material name="upper_left_cabinet_1.003_0.958_0.65_1_door_0_0_material"><color rgba="0.8 0.8 0.8 1.0" /></material></visual><collision><geometry><box size="0.956000 0.168200 2.101000" /></geometry><origin xyz="-0.478000 -0.026000 0.000000" rpy="0 0 0" /></collision></link>
+  <link name="upper_right_cabinet_1.003_0.958_0.65_1_corpus">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.06948634" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_1_back">
+      <geometry>
+        <box size="0.958 0.01 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.0 0.32 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_1_back_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_1_left">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="-0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_1_left_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_1_right">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_1_right_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_1_shelf_0_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 1.3986666666666672" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_1_shelf_0_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_1_shelf_0_0_1">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.7043333333333337" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_1_shelf_0_0_1_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_1_surface_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.005000000000000231" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_1_surface_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_1_top">
+      <geometry>
+        <box size="0.958 0.63 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.01 2.0980000000000003" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_1_top_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_1_back">
+      <geometry>
+        <box size="0.958 0.01 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.0 0.32 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_1_left">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="-0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_1_right">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_1_shelf_0_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 1.3986666666666672" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_1_shelf_0_0_1">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.7043333333333337" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_1_surface_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.005000000000000231" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_1_top">
+      <geometry>
+        <box size="0.958 0.63 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.01 2.0980000000000003" rpy="0.0 -0.0 0.0" />
+    </collision>
+  </link>
+  <link name="upper_right_cabinet_1.003_0.958_0.65_1_door_0_0">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.09999999999999998" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual><geometry><mesh filename="full_pipeline_simple/upper_right_cabinet_1.003_0.958_0.65_1.obj" /></geometry><material name="upper_right_cabinet_1.003_0.958_0.65_1_door_0_0_material"><color rgba="0.8 0.8 0.8 1.0" /></material></visual><collision><geometry><box size="0.956000 0.168200 2.101000" /></geometry><origin xyz="0.478000 -0.026000 0.000000" rpy="0 0 0" /></collision></link>
+  <link name="upper_left_cabinet_1.003_0.958_0.65_2_corpus">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.06948634" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_2_back">
+      <geometry>
+        <box size="0.958 0.01 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.0 0.32 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_2_back_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_2_left">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="-0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_2_left_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_2_right">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_2_right_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_2_shelf_0_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 1.3986666666666672" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_2_shelf_0_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_2_shelf_0_0_1">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.7043333333333337" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_2_shelf_0_0_1_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_2_surface_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.005000000000000231" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_2_surface_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_2_top">
+      <geometry>
+        <box size="0.958 0.63 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.01 2.0980000000000003" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_2_top_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_2_back">
+      <geometry>
+        <box size="0.958 0.01 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.0 0.32 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_2_left">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="-0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_2_right">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_2_shelf_0_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 1.3986666666666672" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_2_shelf_0_0_1">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.7043333333333337" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_2_surface_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.005000000000000231" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_2_top">
+      <geometry>
+        <box size="0.958 0.63 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.01 2.0980000000000003" rpy="0.0 -0.0 0.0" />
+    </collision>
+  </link>
+  <link name="upper_left_cabinet_1.003_0.958_0.65_2_door_0_0">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.09999999999999998" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual><geometry><mesh filename="full_pipeline_simple/upper_left_cabinet_1.003_0.958_0.65_2.obj" /></geometry><material name="upper_left_cabinet_1.003_0.958_0.65_2_door_0_0_material"><color rgba="0.8 0.8 0.8 1.0" /></material></visual><collision><geometry><box size="0.956000 0.168200 2.101000" /></geometry><origin xyz="-0.478000 -0.026000 0.000000" rpy="0 0 0" /></collision></link>
+  <link name="upper_right_cabinet_1.003_0.958_0.65_2_corpus">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.06948634" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_2_back">
+      <geometry>
+        <box size="0.958 0.01 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.0 0.32 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_2_back_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_2_left">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="-0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_2_left_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_2_right">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_2_right_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_2_shelf_0_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 1.3986666666666672" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_2_shelf_0_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_2_shelf_0_0_1">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.7043333333333337" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_2_shelf_0_0_1_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_2_surface_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.005000000000000231" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_2_surface_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_2_top">
+      <geometry>
+        <box size="0.958 0.63 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.01 2.0980000000000003" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_2_top_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_2_back">
+      <geometry>
+        <box size="0.958 0.01 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.0 0.32 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_2_left">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="-0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_2_right">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_2_shelf_0_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 1.3986666666666672" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_2_shelf_0_0_1">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.7043333333333337" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_2_surface_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.005000000000000231" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_2_top">
+      <geometry>
+        <box size="0.958 0.63 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.01 2.0980000000000003" rpy="0.0 -0.0 0.0" />
+    </collision>
+  </link>
+  <link name="upper_right_cabinet_1.003_0.958_0.65_2_door_0_0">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.09999999999999998" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual><geometry><mesh filename="full_pipeline_simple/upper_right_cabinet_1.003_0.958_0.65_2.obj" /></geometry><material name="upper_right_cabinet_1.003_0.958_0.65_2_door_0_0_material"><color rgba="0.8 0.8 0.8 1.0" /></material></visual><collision><geometry><box size="0.956000 0.168200 2.101000" /></geometry><origin xyz="0.478000 -0.026000 0.000000" rpy="0 0 0" /></collision></link>
+  <link name="upper_left_cabinet_1.003_0.958_0.65_3_corpus">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.06948634" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_3_back">
+      <geometry>
+        <box size="0.958 0.01 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.0 0.32 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_3_back_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_3_left">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="-0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_3_left_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_3_right">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_3_right_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_3_shelf_0_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 1.3986666666666672" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_3_shelf_0_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_3_shelf_0_0_1">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.7043333333333337" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_3_shelf_0_0_1_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_3_surface_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.005000000000000231" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_3_surface_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_left_cabinet_1.003_0.958_0.65_3_top">
+      <geometry>
+        <box size="0.958 0.63 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.01 2.0980000000000003" rpy="0.0 -0.0 0.0" />
+      <material name="upper_left_cabinet_1.003_0.958_0.65_3_top_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_3_back">
+      <geometry>
+        <box size="0.958 0.01 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.0 0.32 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_3_left">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="-0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_3_right">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_3_shelf_0_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 1.3986666666666672" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_3_shelf_0_0_1">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.7043333333333337" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_3_surface_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.005000000000000231" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_left_cabinet_1.003_0.958_0.65_3_top">
+      <geometry>
+        <box size="0.958 0.63 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.01 2.0980000000000003" rpy="0.0 -0.0 0.0" />
+    </collision>
+  </link>
+  <link name="upper_left_cabinet_1.003_0.958_0.65_3_door_0_0">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.09999999999999998" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual><geometry><mesh filename="full_pipeline_simple/upper_left_cabinet_1.003_0.958_0.65_3.obj" /></geometry><material name="upper_left_cabinet_1.003_0.958_0.65_3_door_0_0_material"><color rgba="0.8 0.8 0.8 1.0" /></material></visual><collision><geometry><box size="0.956000 0.168200 2.101000" /></geometry><origin xyz="-0.478000 -0.026000 0.000000" rpy="0 0 0" /></collision></link>
+  <link name="upper_right_cabinet_1.003_0.958_0.65_3_corpus">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.06948634" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_3_back">
+      <geometry>
+        <box size="0.958 0.01 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.0 0.32 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_3_back_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_3_left">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="-0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_3_left_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_3_right">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_3_right_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_3_shelf_0_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 1.3986666666666672" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_3_shelf_0_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_3_shelf_0_0_1">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.7043333333333337" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_3_shelf_0_0_1_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_3_surface_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.005000000000000231" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_3_surface_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="upper_right_cabinet_1.003_0.958_0.65_3_top">
+      <geometry>
+        <box size="0.958 0.63 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.01 2.0980000000000003" rpy="0.0 -0.0 0.0" />
+      <material name="upper_right_cabinet_1.003_0.958_0.65_3_top_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_3_back">
+      <geometry>
+        <box size="0.958 0.01 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.0 0.32 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_3_left">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="-0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_3_right">
+      <geometry>
+        <box size="0.01 0.62 2.0930000000000004" />
+      </geometry>
+      <origin xyz="0.474 0.005 1.0465000000000002" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_3_shelf_0_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 1.3986666666666672" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_3_shelf_0_0_1">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.7043333333333337" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_3_surface_0_0">
+      <geometry>
+        <box size="0.938 0.62 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.005 0.005000000000000231" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="upper_right_cabinet_1.003_0.958_0.65_3_top">
+      <geometry>
+        <box size="0.958 0.63 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.01 2.0980000000000003" rpy="0.0 -0.0 0.0" />
+    </collision>
+  </link>
+  <link name="upper_right_cabinet_1.003_0.958_0.65_3_door_0_0">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.09999999999999998" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual><geometry><mesh filename="full_pipeline_simple/upper_right_cabinet_1.003_0.958_0.65_3.obj" /></geometry><material name="upper_right_cabinet_1.003_0.958_0.65_3_door_0_0_material"><color rgba="0.8 0.8 0.8 1.0" /></material></visual><collision><geometry><box size="0.956000 0.168200 2.101000" /></geometry><origin xyz="0.478000 -0.026000 0.000000" rpy="0 0 0" /></collision></link>
+  <link name="double_drawer_0.611_1.916_0.998_corpus">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.11871535999999999" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual name="double_drawer_0.611_1.916_0.998_back">
+      <geometry>
+        <box size="1.916 0.02 0.591" />
+      </geometry>
+      <origin xyz="0.0 0.489 0.2955" rpy="0.0 -0.0 0.0" />
+      <material name="double_drawer_0.611_1.916_0.998_back_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="double_drawer_0.611_1.916_0.998_left">
+      <geometry>
+        <box size="0.02 0.958 0.591" />
+      </geometry>
+      <origin xyz="-0.948 0.0 0.2955" rpy="0.0 -0.0 0.0" />
+      <material name="double_drawer_0.611_1.916_0.998_left_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="double_drawer_0.611_1.916_0.998_right">
+      <geometry>
+        <box size="0.02 0.958 0.591" />
+      </geometry>
+      <origin xyz="0.948 0.0 0.2955" rpy="0.0 -0.0 0.0" />
+      <material name="double_drawer_0.611_1.916_0.998_right_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="double_drawer_0.611_1.916_0.998_surface_0_0">
+      <geometry>
+        <box size="1.876 0.958 0.02" />
+      </geometry>
+      <origin xyz="0.0 0.0 0.010000000000000018" rpy="0.0 -0.0 0.0" />
+      <material name="double_drawer_0.611_1.916_0.998_surface_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="double_drawer_0.611_1.916_0.998_top">
+      <geometry>
+        <box size="1.916 0.978 0.02" />
+      </geometry>
+      <origin xyz="0.0 0.01 0.601" rpy="0.0 -0.0 0.0" />
+      <material name="double_drawer_0.611_1.916_0.998_top_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <collision name="double_drawer_0.611_1.916_0.998_back">
+      <geometry>
+        <box size="1.916 0.02 0.591" />
+      </geometry>
+      <origin xyz="0.0 0.489 0.2955" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="double_drawer_0.611_1.916_0.998_left">
+      <geometry>
+        <box size="0.02 0.958 0.591" />
+      </geometry>
+      <origin xyz="-0.948 0.0 0.2955" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="double_drawer_0.611_1.916_0.998_right">
+      <geometry>
+        <box size="0.02 0.958 0.591" />
+      </geometry>
+      <origin xyz="0.948 0.0 0.2955" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="double_drawer_0.611_1.916_0.998_surface_0_0">
+      <geometry>
+        <box size="1.876 0.958 0.02" />
+      </geometry>
+      <origin xyz="0.0 0.0 0.010000000000000018" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="double_drawer_0.611_1.916_0.998_top">
+      <geometry>
+        <box size="1.916 0.978 0.02" />
+      </geometry>
+      <origin xyz="0.0 0.01 0.601" rpy="0.0 -0.0 0.0" />
+    </collision>
+  </link>
+  <link name="double_drawer_0.611_1.916_0.998_drawer_0_0">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.10000000000000002" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual><geometry><mesh filename="full_pipeline_simple/double_drawer_0.611_1.916_0.998.obj" /></geometry><material name="double_drawer_0.611_1.916_0.998_drawer_0_0_material"><color rgba="0.8 0.8 0.8 1.0" /></material></visual><collision><geometry><box size="1.912000 0.990300 0.607000" /></geometry><origin xyz="0.000000 0.365050 0.000000" rpy="0 0 0" /></collision></link>
   <link name="world" />
   <link name="drawer_0.333_0.958_0.998_0" />
   <link name="drawer_0.333_0.958_0.998_1" />
@@ -1171,6 +2212,15 @@
   <link name="drawer_0.333_0.958_0.998_5" />
   <link name="lower_left_cabinet_1.003_0.958_0.998_2" />
   <link name="lower_right_cabinet_1.003_0.958_0.998_2" />
+  <link name="upper_left_cabinet_1.003_0.958_0.65_0" />
+  <link name="upper_right_cabinet_1.003_0.958_0.65_0" />
+  <link name="upper_left_cabinet_1.003_0.958_0.65_1" />
+  <link name="upper_right_cabinet_1.003_0.958_0.65_1" />
+  <link name="upper_left_cabinet_1.003_0.958_0.65_2" />
+  <link name="upper_right_cabinet_1.003_0.958_0.65_2" />
+  <link name="upper_left_cabinet_1.003_0.958_0.65_3" />
+  <link name="upper_right_cabinet_1.003_0.958_0.65_3" />
+  <link name="double_drawer_0.611_1.916_0.998" />
   <joint name="drawer_0.333_0.958_0.998_0_world_fixed_joint" type="fixed">
     <parent link="world" />
     <child link="drawer_0.333_0.958_0.998_0" />
@@ -1373,6 +2423,159 @@
   <joint name="lower_right_cabinet_1.003_0.958_0.998_2_origin_joint" type="fixed">
     <parent link="lower_right_cabinet_1.003_0.958_0.998_2" />
     <child link="lower_right_cabinet_1.003_0.958_0.998_2_corpus" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="upper_left_cabinet_1.003_0.958_0.65_0_world_fixed_joint" type="fixed">
+    <parent link="world" />
+    <child link="upper_left_cabinet_1.003_0.958_0.65_0" />
+    <origin xyz="2.874 0.174 1.233" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="upper_left_cabinet_1.003_0.958_0.65_0_corpus_to_door_0_0" type="revolute">
+    <parent link="upper_left_cabinet_1.003_0.958_0.65_0_corpus" />
+    <child link="upper_left_cabinet_1.003_0.958_0.65_0_door_0_0" />
+    <origin xyz="0.478 -0.325 1.0515000000000003" rpy="0.0 -0.0 0.0" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" velocity="0.1" lower="0.0" upper="1.5707963267948966" />
+  </joint>
+  <joint name="upper_left_cabinet_1.003_0.958_0.65_0_origin_joint" type="fixed">
+    <parent link="upper_left_cabinet_1.003_0.958_0.65_0" />
+    <child link="upper_left_cabinet_1.003_0.958_0.65_0_corpus" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="upper_right_cabinet_1.003_0.958_0.65_0_world_fixed_joint" type="fixed">
+    <parent link="world" />
+    <child link="upper_right_cabinet_1.003_0.958_0.65_0" />
+    <origin xyz="1.916 0.174 1.2330000000000003" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="upper_right_cabinet_1.003_0.958_0.65_0_corpus_to_door_0_0" type="revolute">
+    <parent link="upper_right_cabinet_1.003_0.958_0.65_0_corpus" />
+    <child link="upper_right_cabinet_1.003_0.958_0.65_0_door_0_0" />
+    <origin xyz="-0.478 -0.325 1.0515000000000003" rpy="0.0 -0.0 0.0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="1000.0" velocity="0.1" lower="0.0" upper="1.5707963267948966" />
+  </joint>
+  <joint name="upper_right_cabinet_1.003_0.958_0.65_0_origin_joint" type="fixed">
+    <parent link="upper_right_cabinet_1.003_0.958_0.65_0" />
+    <child link="upper_right_cabinet_1.003_0.958_0.65_0_corpus" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="upper_left_cabinet_1.003_0.958_0.65_1_world_fixed_joint" type="fixed">
+    <parent link="world" />
+    <child link="upper_left_cabinet_1.003_0.958_0.65_1" />
+    <origin xyz="0.9579999999999999 0.174 1.2330000000000003" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="upper_left_cabinet_1.003_0.958_0.65_1_corpus_to_door_0_0" type="revolute">
+    <parent link="upper_left_cabinet_1.003_0.958_0.65_1_corpus" />
+    <child link="upper_left_cabinet_1.003_0.958_0.65_1_door_0_0" />
+    <origin xyz="0.478 -0.325 1.0515000000000003" rpy="0.0 -0.0 0.0" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" velocity="0.1" lower="0.0" upper="1.5707963267948966" />
+  </joint>
+  <joint name="upper_left_cabinet_1.003_0.958_0.65_1_origin_joint" type="fixed">
+    <parent link="upper_left_cabinet_1.003_0.958_0.65_1" />
+    <child link="upper_left_cabinet_1.003_0.958_0.65_1_corpus" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="upper_right_cabinet_1.003_0.958_0.65_1_world_fixed_joint" type="fixed">
+    <parent link="world" />
+    <child link="upper_right_cabinet_1.003_0.958_0.65_1" />
+    <origin xyz="-1.1102230246251565e-16 0.174 1.2330000000000003" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="upper_right_cabinet_1.003_0.958_0.65_1_corpus_to_door_0_0" type="revolute">
+    <parent link="upper_right_cabinet_1.003_0.958_0.65_1_corpus" />
+    <child link="upper_right_cabinet_1.003_0.958_0.65_1_door_0_0" />
+    <origin xyz="-0.478 -0.325 1.0515000000000003" rpy="0.0 -0.0 0.0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="1000.0" velocity="0.1" lower="0.0" upper="1.5707963267948966" />
+  </joint>
+  <joint name="upper_right_cabinet_1.003_0.958_0.65_1_origin_joint" type="fixed">
+    <parent link="upper_right_cabinet_1.003_0.958_0.65_1" />
+    <child link="upper_right_cabinet_1.003_0.958_0.65_1_corpus" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="upper_left_cabinet_1.003_0.958_0.65_2_world_fixed_joint" type="fixed">
+    <parent link="world" />
+    <child link="upper_left_cabinet_1.003_0.958_0.65_2" />
+    <origin xyz="-0.9580000000000001 0.174 1.2330000000000003" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="upper_left_cabinet_1.003_0.958_0.65_2_corpus_to_door_0_0" type="revolute">
+    <parent link="upper_left_cabinet_1.003_0.958_0.65_2_corpus" />
+    <child link="upper_left_cabinet_1.003_0.958_0.65_2_door_0_0" />
+    <origin xyz="0.478 -0.325 1.0515000000000003" rpy="0.0 -0.0 0.0" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" velocity="0.1" lower="0.0" upper="1.5707963267948966" />
+  </joint>
+  <joint name="upper_left_cabinet_1.003_0.958_0.65_2_origin_joint" type="fixed">
+    <parent link="upper_left_cabinet_1.003_0.958_0.65_2" />
+    <child link="upper_left_cabinet_1.003_0.958_0.65_2_corpus" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="upper_right_cabinet_1.003_0.958_0.65_2_world_fixed_joint" type="fixed">
+    <parent link="world" />
+    <child link="upper_right_cabinet_1.003_0.958_0.65_2" />
+    <origin xyz="-1.916 0.174 1.2330000000000003" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="upper_right_cabinet_1.003_0.958_0.65_2_corpus_to_door_0_0" type="revolute">
+    <parent link="upper_right_cabinet_1.003_0.958_0.65_2_corpus" />
+    <child link="upper_right_cabinet_1.003_0.958_0.65_2_door_0_0" />
+    <origin xyz="-0.478 -0.325 1.0515000000000003" rpy="0.0 -0.0 0.0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="1000.0" velocity="0.1" lower="0.0" upper="1.5707963267948966" />
+  </joint>
+  <joint name="upper_right_cabinet_1.003_0.958_0.65_2_origin_joint" type="fixed">
+    <parent link="upper_right_cabinet_1.003_0.958_0.65_2" />
+    <child link="upper_right_cabinet_1.003_0.958_0.65_2_corpus" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="upper_left_cabinet_1.003_0.958_0.65_3_world_fixed_joint" type="fixed">
+    <parent link="world" />
+    <child link="upper_left_cabinet_1.003_0.958_0.65_3" />
+    <origin xyz="4.026 -1.936 1.233" rpy="0.0 -0.0 -1.5707963267948966" />
+  </joint>
+  <joint name="upper_left_cabinet_1.003_0.958_0.65_3_corpus_to_door_0_0" type="revolute">
+    <parent link="upper_left_cabinet_1.003_0.958_0.65_3_corpus" />
+    <child link="upper_left_cabinet_1.003_0.958_0.65_3_door_0_0" />
+    <origin xyz="0.478 -0.325 1.0515000000000003" rpy="0.0 -0.0 0.0" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" velocity="0.1" lower="0.0" upper="1.5707963267948966" />
+  </joint>
+  <joint name="upper_left_cabinet_1.003_0.958_0.65_3_origin_joint" type="fixed">
+    <parent link="upper_left_cabinet_1.003_0.958_0.65_3" />
+    <child link="upper_left_cabinet_1.003_0.958_0.65_3_corpus" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="upper_right_cabinet_1.003_0.958_0.65_3_world_fixed_joint" type="fixed">
+    <parent link="world" />
+    <child link="upper_right_cabinet_1.003_0.958_0.65_3" />
+    <origin xyz="4.026 -0.9779999999999999 1.2330000000000003" rpy="0.0 -0.0 -1.5707963267948966" />
+  </joint>
+  <joint name="upper_right_cabinet_1.003_0.958_0.65_3_corpus_to_door_0_0" type="revolute">
+    <parent link="upper_right_cabinet_1.003_0.958_0.65_3_corpus" />
+    <child link="upper_right_cabinet_1.003_0.958_0.65_3_door_0_0" />
+    <origin xyz="-0.478 -0.325 1.0515000000000003" rpy="0.0 -0.0 0.0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="1000.0" velocity="0.1" lower="0.0" upper="1.5707963267948966" />
+  </joint>
+  <joint name="upper_right_cabinet_1.003_0.958_0.65_3_origin_joint" type="fixed">
+    <parent link="upper_right_cabinet_1.003_0.958_0.65_3" />
+    <child link="upper_right_cabinet_1.003_0.958_0.65_3_corpus" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="double_drawer_0.611_1.916_0.998_world_fixed_joint" type="fixed">
+    <parent link="world" />
+    <child link="double_drawer_0.611_1.916_0.998" />
+    <origin xyz="-1.4369999999999998 0.0 -1.003" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="double_drawer_0.611_1.916_0.998_corpus_to_drawer_0_0" type="prismatic">
+    <parent link="double_drawer_0.611_1.916_0.998_corpus" />
+    <child link="double_drawer_0.611_1.916_0.998_drawer_0_0" />
+    <origin xyz="0.0 -0.479 0.3055" rpy="0.0 -0.0 0.0" />
+    <axis xyz="0 -1 0" />
+    <limit effort="1000.0" velocity="1.0" lower="0.0" upper="0.79218" />
+  </joint>
+  <joint name="double_drawer_0.611_1.916_0.998_origin_joint" type="fixed">
+    <parent link="double_drawer_0.611_1.916_0.998" />
+    <child link="double_drawer_0.611_1.916_0.998_corpus" />
     <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
   </joint>
 </robot>

@@ -16,14 +16,26 @@ import open3d as o3d
 # raw_mesh_path = 'scene/object_2_state_1_aligned_mesh.obj'
 # dims = extract_dimensions(raw_mesh_path)
 
-drawer_path = 'drawer_3.obj'
+# drawer_path = 'drawer_3.obj'
 door_path = 'door_4.obj'
-drawer_dims = extract_dimensions(drawer_path)
-door_dims = extract_dimensions(door_path)
-print(drawer_dims, door_dims)
+# drawer_dims = extract_dimensions(drawer_path)
+# door_dims = extract_dimensions(door_path)
+# print(drawer_dims, door_dims)
+
+# upper_cabinet_path = 'second_floor_1_5_img/top_cabinet_left_door/object_9_mesh.obj'
+# dims = extract_dimensions(upper_cabinet_path)
+# print("Upper cabinet dimensions:", dims)
+
+double_drawer_path = 'basement_1_5_img/top_cabinet_body/object_8_mesh.obj'
+dims = extract_dimensions(double_drawer_path)
+print("Upper cabinet dimensions:", dims)
+double_drawer_path = 'basement_1_5_img/bottom_cabinet_body/object_6_mesh.obj'
+dims = extract_dimensions(double_drawer_path)
+print("Upper cabinet dimensions:", dims)
+
 
 # # Load both meshes
-# drawer_mesh = o3d.io.read_triangle_mesh(drawer_path)
+# drawer_mesh = o3d.io.read_triangle_mesh(double_drawer_path)
 # door_mesh = o3d.io.read_triangle_mesh(door_path)
 
 # # Add vertex colors to distinguish the meshes (optional)
@@ -53,17 +65,17 @@ print(drawer_dims, door_dims)
 # vis.run()
 # vis.destroy_window()
 
-lower_large_double_cabinet = pa.BaseCabinetAsset(
-    width=0.958, 
-    height=0.333, 
-    depth=0.998, 
-    num_drawers_horizontal=1,
-    include_cabinet_doors=False,
-    include_foot_panel=False # Explicitly specify door types
-)
-s = synth.Scene()
-s.add_object(lower_large_double_cabinet, 'cabinet')
+# lower_large_double_cabinet = pa.BaseCabinetAsset(
+#     width=0.958, 
+#     height=0.333, 
+#     depth=0.998, 
+#     num_drawers_horizontal=1,
+#     include_cabinet_doors=False,
+#     include_foot_panel=False # Explicitly specify door types
+# )
+# s = synth.Scene()
+# s.add_object(lower_large_double_cabinet, 'cabinet')
 
-# # s.show()
+# # # s.show()
 
-s.export('extracted_drawer/drawer_extracted.urdf')
+# s.export('extracted_drawer/drawer_extracted.urdf')
