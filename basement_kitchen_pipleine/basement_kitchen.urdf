@@ -2318,6 +2318,595 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
     </inertial>
     <visual><geometry><mesh filename="basement_kitchen_pipleine/titled_upper_right_cabinet_1.586_0.7035712472806148_0.7035712472806147_0.obj" /></geometry><material name="titled_upper_right_cabinet_1.586_0.7035712472806148_0.7035712472806147_0_door_0_0_material"><color rgba="0.8 0.8 0.8 1.0" /></material></visual><collision><geometry><box size="0.701571 0.168200 1.584000" /></geometry><origin xyz="0.350786 -0.026000 0.000000" rpy="0 0 0" /></collision></link>
+  <link name="counter_0">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.34049238299999995" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual name="counter_0_geometry_0">
+      <geometry>
+        <box size="4.938 1.04475 0.06599999999999999" />
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <material name="counter_0_geometry_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <collision name="counter_0_geometry_0">
+      <geometry>
+        <box size="4.938 1.04475 0.06599999999999999" />
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+    </collision>
+  </link>
+  <link name="counter_1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.18210619349999999" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual name="counter_1_geometry_0">
+      <geometry>
+        <box size="2.641 1.04475 0.06599999999999999" />
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <material name="counter_1_geometry_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <collision name="counter_1_geometry_0">
+      <geometry>
+        <box size="2.641 1.04475 0.06599999999999999" />
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+    </collision>
+  </link>
+  <link name="microwave_corpus">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="0.13214763599999999" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual name="microwave_back">
+      <geometry>
+        <box size="1.1522 0.04 0.5564999999999999" />
+      </geometry>
+      <origin xyz="0.0 0.32825 0.27824999999999994" rpy="0.0 -0.0 0.0" />
+      <material name="microwave_back_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="microwave_bottom">
+      <geometry>
+        <box size="0.9921999999999999 0.6165 0.04" />
+      </geometry>
+      <origin xyz="-0.039999999999999994 0.0 0.02" rpy="0.0 -0.0 0.0" />
+      <material name="microwave_bottom_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="microwave_left">
+      <geometry>
+        <box size="0.04 0.6165 0.5164999999999998" />
+      </geometry>
+      <origin xyz="-0.5560999999999999 0.0 0.2582499999999999" rpy="0.0 -0.0 0.0" />
+      <material name="microwave_left_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="microwave_right">
+      <geometry>
+        <box size="0.12 0.6565 0.5564999999999999" />
+      </geometry>
+      <origin xyz="0.5161 -0.02 0.27824999999999994" rpy="0.0 -0.0 0.0" />
+      <material name="microwave_right_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="microwave_top">
+      <geometry>
+        <box size="1.0322 0.6165 0.04" />
+      </geometry>
+      <origin xyz="-0.06 0.0 0.5364999999999999" rpy="0.0 -0.0 0.0" />
+      <material name="microwave_top_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <collision name="microwave_back">
+      <geometry>
+        <box size="1.1522 0.04 0.5564999999999999" />
+      </geometry>
+      <origin xyz="0.0 0.32825 0.27824999999999994" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="microwave_bottom">
+      <geometry>
+        <box size="0.9921999999999999 0.6165 0.04" />
+      </geometry>
+      <origin xyz="-0.039999999999999994 0.0 0.02" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="microwave_left">
+      <geometry>
+        <box size="0.04 0.6165 0.5164999999999998" />
+      </geometry>
+      <origin xyz="-0.5560999999999999 0.0 0.2582499999999999" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="microwave_right">
+      <geometry>
+        <box size="0.12 0.6565 0.5564999999999999" />
+      </geometry>
+      <origin xyz="0.5161 -0.02 0.27824999999999994" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="microwave_top">
+      <geometry>
+        <box size="1.0322 0.6165 0.04" />
+      </geometry>
+      <origin xyz="-0.06 0.0 0.5364999999999999" rpy="0.0 -0.0 0.0" />
+    </collision>
+  </link>
+  <link name="microwave_door">
+    <inertial>
+      <origin xyz="-2.4230034698656786e-20 0.0002820708115385061 -1.8475756493142632e-14" rpy="0.0 -0.0 0.0" />
+      <mass value="0.023305316666928706" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual name="microwave_door_handle">
+      <geometry>
+        <mesh filename="microwave_door_handle.obj" />
+      </geometry>
+      <origin xyz="0.9822 -0.11000000000000001 0.27824999999999994" rpy="-0.0 1.5707963267948966 0.0" />
+      <material name="microwave_door_handle_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="microwave_door_panel">
+      <geometry>
+        <box size="1.0322 0.04 0.5564999999999999" />
+      </geometry>
+      <origin xyz="0.5161 -0.02 0.27824999999999994" rpy="0.0 -0.0 0.0" />
+      <material name="microwave_door_panel_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <collision name="microwave_door_handle">
+      <geometry>
+        <mesh filename="microwave_door_handle.obj" />
+      </geometry>
+      <origin xyz="0.9822 -0.11000000000000001 0.27824999999999994" rpy="-0.0 1.5707963267948966 0.0" />
+    </collision>
+    <collision name="microwave_door_panel">
+      <geometry>
+        <box size="1.0322 0.04 0.5564999999999999" />
+      </geometry>
+      <origin xyz="0.5161 -0.02 0.27824999999999994" rpy="0.0 -0.0 0.0" />
+    </collision>
+  </link>
+  <link name="refrigerator_corpus">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+      <mass value="1.0099313199999995" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual name="refrigerator_back">
+      <geometry>
+        <box size="1.646 0.07 2.9059999999999997" />
+      </geometry>
+      <origin xyz="0.0 0.4625 1.4529999999999998" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_back_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_bottom">
+      <geometry>
+        <box size="1.5059999999999998 0.855 0.07" />
+      </geometry>
+      <origin xyz="0.0 0.0 0.035" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_bottom_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_freezer_separator">
+      <geometry>
+        <box size="1.5059999999999998 0.855 0.07" />
+      </geometry>
+      <origin xyz="0.0 0.0 2.4159999999999995" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_freezer_separator_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_left">
+      <geometry>
+        <box size="0.07 0.855 2.836" />
+      </geometry>
+      <origin xyz="-0.7879999999999999 0.0 1.418" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_left_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_right">
+      <geometry>
+        <box size="0.07 0.855 2.836" />
+      </geometry>
+      <origin xyz="0.7879999999999999 0.0 1.418" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_right_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_shelf_0">
+      <geometry>
+        <box size="1.5059999999999998 0.755 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.05 0.5181999999999999" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_shelf_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_shelf_1">
+      <geometry>
+        <box size="1.5059999999999998 0.755 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.05 1.0013999999999998" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_shelf_1_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_shelf_2">
+      <geometry>
+        <box size="1.5059999999999998 0.755 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.05 1.4845999999999997" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_shelf_2_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_shelf_3">
+      <geometry>
+        <box size="1.5059999999999998 0.755 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.05 1.9677999999999995" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_shelf_3_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_shelf_4">
+      <geometry>
+        <box size="1.5059999999999998 0.755 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.05 0.07500000000000001" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_shelf_4_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_top">
+      <geometry>
+        <box size="1.646 0.855 0.07" />
+      </geometry>
+      <origin xyz="0.0 0.0 2.8709999999999996" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_top_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <collision name="refrigerator_back">
+      <geometry>
+        <box size="1.646 0.07 2.9059999999999997" />
+      </geometry>
+      <origin xyz="0.0 0.4625 1.4529999999999998" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_bottom">
+      <geometry>
+        <box size="1.5059999999999998 0.855 0.07" />
+      </geometry>
+      <origin xyz="0.0 0.0 0.035" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_freezer_separator">
+      <geometry>
+        <box size="1.5059999999999998 0.855 0.07" />
+      </geometry>
+      <origin xyz="0.0 0.0 2.4159999999999995" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_left">
+      <geometry>
+        <box size="0.07 0.855 2.836" />
+      </geometry>
+      <origin xyz="-0.7879999999999999 0.0 1.418" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_right">
+      <geometry>
+        <box size="0.07 0.855 2.836" />
+      </geometry>
+      <origin xyz="0.7879999999999999 0.0 1.418" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_shelf_0">
+      <geometry>
+        <box size="1.5059999999999998 0.755 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.05 0.5181999999999999" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_shelf_1">
+      <geometry>
+        <box size="1.5059999999999998 0.755 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.05 1.0013999999999998" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_shelf_2">
+      <geometry>
+        <box size="1.5059999999999998 0.755 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.05 1.4845999999999997" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_shelf_3">
+      <geometry>
+        <box size="1.5059999999999998 0.755 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.05 1.9677999999999995" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_shelf_4">
+      <geometry>
+        <box size="1.5059999999999998 0.755 0.01" />
+      </geometry>
+      <origin xyz="0.0 0.05 0.07500000000000001" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_top">
+      <geometry>
+        <box size="1.646 0.855 0.07" />
+      </geometry>
+      <origin xyz="0.0 0.0 2.8709999999999996" rpy="0.0 -0.0 0.0" />
+    </collision>
+  </link>
+  <link name="refrigerator_door">
+    <inertial>
+      <origin xyz="-2.0270326105341603e-17 0.038190741833130266 1.1626010336340227" rpy="0.0 -0.0 0.0" />
+      <mass value="0.22823973989662763" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual name="refrigerator_door_handle">
+      <geometry>
+        <mesh filename="refrigerator_door_handle.obj" />
+      </geometry>
+      <origin xyz="-1.581 -0.09000000000000001 2.2159999999999997" rpy="-0.0 1.5707963267948966 0.0" />
+      <material name="refrigerator_door_handle_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_door_holder_0_0">
+      <geometry>
+        <box size="1.5059999999999998 0.01 0.01" />
+      </geometry>
+      <origin xyz="-0.823 0.085 0.14" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_door_holder_0_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_door_holder_0_1">
+      <geometry>
+        <box size="1.5059999999999998 0.01 0.01" />
+      </geometry>
+      <origin xyz="-0.823 0.085 0.9336666666666664" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_door_holder_0_1_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_door_holder_0_2">
+      <geometry>
+        <box size="1.5059999999999998 0.01 0.01" />
+      </geometry>
+      <origin xyz="-0.823 0.085 1.727333333333333" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_door_holder_0_2_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_door_holder_1_0">
+      <geometry>
+        <box size="0.01 0.1 0.01" />
+      </geometry>
+      <origin xyz="-1.5759999999999998 0.035 0.14" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_door_holder_1_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_door_holder_1_1">
+      <geometry>
+        <box size="0.01 0.1 0.01" />
+      </geometry>
+      <origin xyz="-1.5759999999999998 0.035 0.9336666666666664" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_door_holder_1_1_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_door_holder_1_2">
+      <geometry>
+        <box size="0.01 0.1 0.01" />
+      </geometry>
+      <origin xyz="-1.5759999999999998 0.035 1.727333333333333" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_door_holder_1_2_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_door_holder_2_0">
+      <geometry>
+        <box size="0.01 0.1 0.01" />
+      </geometry>
+      <origin xyz="-0.07 0.035 0.14" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_door_holder_2_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_door_holder_2_1">
+      <geometry>
+        <box size="0.01 0.1 0.01" />
+      </geometry>
+      <origin xyz="-0.07 0.035 0.9336666666666664" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_door_holder_2_1_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_door_holder_2_2">
+      <geometry>
+        <box size="0.01 0.1 0.01" />
+      </geometry>
+      <origin xyz="-0.07 0.035 1.727333333333333" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_door_holder_2_2_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_door_panel">
+      <geometry>
+        <mesh filename="refrigerator_door_panel.obj" />
+      </geometry>
+      <origin xyz="-0.823 -0.07 0.0175" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_door_panel_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_door_shelf_0">
+      <geometry>
+        <box size="1.5059999999999998 0.1 0.01" />
+      </geometry>
+      <origin xyz="-0.823 0.035 0.08" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_door_shelf_0_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_door_shelf_1">
+      <geometry>
+        <box size="1.5059999999999998 0.1 0.01" />
+      </geometry>
+      <origin xyz="-0.823 0.035 0.8736666666666664" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_door_shelf_1_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_door_shelf_2">
+      <geometry>
+        <box size="1.5059999999999998 0.1 0.01" />
+      </geometry>
+      <origin xyz="-0.823 0.035 1.667333333333333" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_door_shelf_2_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <collision name="refrigerator_door_handle">
+      <geometry>
+        <mesh filename="refrigerator_door_handle.obj" />
+      </geometry>
+      <origin xyz="-1.581 -0.09000000000000001 2.2159999999999997" rpy="-0.0 1.5707963267948966 0.0" />
+    </collision>
+    <collision name="refrigerator_door_holder_0_0">
+      <geometry>
+        <box size="1.5059999999999998 0.01 0.01" />
+      </geometry>
+      <origin xyz="-0.823 0.085 0.14" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_door_holder_0_1">
+      <geometry>
+        <box size="1.5059999999999998 0.01 0.01" />
+      </geometry>
+      <origin xyz="-0.823 0.085 0.9336666666666664" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_door_holder_0_2">
+      <geometry>
+        <box size="1.5059999999999998 0.01 0.01" />
+      </geometry>
+      <origin xyz="-0.823 0.085 1.727333333333333" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_door_holder_1_0">
+      <geometry>
+        <box size="0.01 0.1 0.01" />
+      </geometry>
+      <origin xyz="-1.5759999999999998 0.035 0.14" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_door_holder_1_1">
+      <geometry>
+        <box size="0.01 0.1 0.01" />
+      </geometry>
+      <origin xyz="-1.5759999999999998 0.035 0.9336666666666664" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_door_holder_1_2">
+      <geometry>
+        <box size="0.01 0.1 0.01" />
+      </geometry>
+      <origin xyz="-1.5759999999999998 0.035 1.727333333333333" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_door_holder_2_0">
+      <geometry>
+        <box size="0.01 0.1 0.01" />
+      </geometry>
+      <origin xyz="-0.07 0.035 0.14" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_door_holder_2_1">
+      <geometry>
+        <box size="0.01 0.1 0.01" />
+      </geometry>
+      <origin xyz="-0.07 0.035 0.9336666666666664" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_door_holder_2_2">
+      <geometry>
+        <box size="0.01 0.1 0.01" />
+      </geometry>
+      <origin xyz="-0.07 0.035 1.727333333333333" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_door_panel">
+      <geometry>
+        <mesh filename="refrigerator_door_panel.obj" />
+      </geometry>
+      <origin xyz="-0.823 -0.07 0.0175" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_door_shelf_0">
+      <geometry>
+        <box size="1.5059999999999998 0.1 0.01" />
+      </geometry>
+      <origin xyz="-0.823 0.035 0.08" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_door_shelf_1">
+      <geometry>
+        <box size="1.5059999999999998 0.1 0.01" />
+      </geometry>
+      <origin xyz="-0.823 0.035 0.8736666666666664" rpy="0.0 -0.0 0.0" />
+    </collision>
+    <collision name="refrigerator_door_shelf_2">
+      <geometry>
+        <box size="1.5059999999999998 0.1 0.01" />
+      </geometry>
+      <origin xyz="-0.823 0.035 1.667333333333333" rpy="0.0 -0.0 0.0" />
+    </collision>
+  </link>
+  <link name="refrigerator_freezer_door">
+    <inertial>
+      <origin xyz="-6.502364313579677e-18 0.03888405020665898 0.23455877897927102" rpy="0.0 -0.0 0.0" />
+      <mass value="0.04455075938393452" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+    <visual name="refrigerator_freezer_door_handle">
+      <geometry>
+        <mesh filename="refrigerator_freezer_door_handle.obj" />
+      </geometry>
+      <origin xyz="-1.581 -0.09000000000000001 2.615999999999999" rpy="-0.0 1.5707963267948966 0.0" />
+      <material name="refrigerator_freezer_door_handle_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <visual name="refrigerator_freezer_door_panel">
+      <geometry>
+        <mesh filename="refrigerator_freezer_door_panel.obj" />
+      </geometry>
+      <origin xyz="-0.823 -0.07 2.4334999999999996" rpy="0.0 -0.0 0.0" />
+      <material name="refrigerator_freezer_door_panel_main_color">
+        <color rgba="0.4 0.4 0.4 1.0" />
+      </material>
+    </visual>
+    <collision name="refrigerator_freezer_door_handle">
+      <geometry>
+        <mesh filename="refrigerator_freezer_door_handle.obj" />
+      </geometry>
+      <origin xyz="-1.581 -0.09000000000000001 2.615999999999999" rpy="-0.0 1.5707963267948966 0.0" />
+    </collision>
+    <collision name="refrigerator_freezer_door_panel">
+      <geometry>
+        <mesh filename="refrigerator_freezer_door_panel.obj" />
+      </geometry>
+      <origin xyz="-0.823 -0.07 2.4334999999999996" rpy="0.0 -0.0 0.0" />
+    </collision>
+  </link>
   <link name="world" />
   <link name="drawer_0.319_0.823_0.995_0" />
   <link name="drawer_0.319_0.823_0.995_1" />
@@ -2341,6 +2930,8 @@
   <link name="upper_right_cabinet_1.001_0.823_0.4975_3" />
   <link name="double_drawer_0.525_1.646_0.995" />
   <link name="titled_upper_right_cabinet_1.586_0.7035712472806148_0.7035712472806147_0" />
+  <link name="microwave" />
+  <link name="refrigerator" />
   <joint name="drawer_0.319_0.823_0.995_0_world_fixed_joint" type="fixed">
     <parent link="world" />
     <child link="drawer_0.319_0.823_0.995_0" />
@@ -2713,6 +3304,57 @@
   <joint name="titled_upper_right_cabinet_1.586_0.7035712472806148_0.7035712472806147_0_origin_joint" type="fixed">
     <parent link="titled_upper_right_cabinet_1.586_0.7035712472806148_0.7035712472806147_0" />
     <child link="titled_upper_right_cabinet_1.586_0.7035712472806148_0.7035712472806147_0_corpus" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="counter_0_world_fixed_joint" type="fixed">
+    <parent link="world" />
+    <child link="counter_0" />
+    <origin xyz="0.41150000000000064 -0.024875000000000036 0.352" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="counter_1_world_fixed_joint" type="fixed">
+    <parent link="world" />
+    <child link="counter_1" />
+    <origin xyz="3.3531249999999995 -0.8229999999999995 0.352" rpy="0.0 -0.0 -1.5707963267948966" />
+  </joint>
+  <joint name="microwave_world_fixed_joint" type="fixed">
+    <parent link="world" />
+    <child link="microwave" />
+    <origin xyz="-1.2345000000000002 0.020656720000000017 -0.47599999999999987" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="microwave_door_joint" type="revolute">
+    <parent link="microwave_corpus" />
+    <child link="microwave_door" />
+    <origin xyz="-0.5761 -0.30825 0.0" rpy="0.0 -0.0 0.0" />
+    <axis xyz="-0.0 -0.0 -1.0" />
+    <limit effort="100.0" velocity="100.0" lower="0" upper="3.141592653589793" />
+  </joint>
+  <joint name="microwave_origin_joint" type="fixed">
+    <parent link="microwave" />
+    <child link="microwave_corpus" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="refrigerator_world_fixed_joint" type="fixed">
+    <parent link="world" />
+    <child link="refrigerator" />
+    <origin xyz="-2.8805 -5.551115123125783e-17 -1.001" rpy="0.0 -0.0 0.0" />
+  </joint>
+  <joint name="refrigerator_door_joint" type="revolute">
+    <parent link="refrigerator_corpus" />
+    <child link="refrigerator_door" />
+    <origin xyz="0.823 -0.4275 0.0" rpy="0.0 -0.0 0.0" />
+    <axis xyz="0.0 0.0 1.0" />
+    <limit effort="100.0" velocity="100.0" lower="0" upper="3.141592653589793" />
+  </joint>
+  <joint name="refrigerator_freezer_door_joint" type="revolute">
+    <parent link="refrigerator_corpus" />
+    <child link="refrigerator_freezer_door" />
+    <origin xyz="0.823 -0.4275 0.0" rpy="0.0 -0.0 0.0" />
+    <axis xyz="0.0 0.0 1.0" />
+    <limit effort="100.0" velocity="100.0" lower="0" upper="3.141592653589793" />
+  </joint>
+  <joint name="refrigerator_origin_joint" type="fixed">
+    <parent link="refrigerator" />
+    <child link="refrigerator_corpus" />
     <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
   </joint>
 </robot>

@@ -71,7 +71,7 @@ assets = basement_kitchen(drawer_height=drawer_height,
                           upper_cabinet_translation=upper_cabinet_translation,
                           s=s)
 
-urdf_path = 'basement_kitchen_pipleine/initial_scene.urdf'
+urdf_path = 'basement_kitchen_pipleine/basement_kitchen.urdf'
 s.export(urdf_path)
 
 for asset in assets:
