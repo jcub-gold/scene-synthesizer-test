@@ -6,21 +6,24 @@ import scene_synthesizer as synth
 from scene_synthesizer import procedural_assets as pa
 import numpy as np
 from basement_kitchen import basement_kitchen
+import trimesh
+
 
 # Hardcoded/Estimated dimensions: translation up to wall cabinets, double drawers at the bottom, countertop, floor buffer
 # Ideally get better scaled meshes from the scene
 
-drawer_raw_mesh_path = 'drawer_3.obj'
-door_raw_mesh_path = 'door_4.obj'
-upper_cabinet_raw_mesh_path = 'upper_cabinet.obj'
+drawer_raw_mesh_path = 'basement_1_5_img/top_drawer_left/object_7_mesh.obj'
+door_raw_mesh_path = 'basement_1_5_img/bottom_cabinet_right_door/object_4_mesh.obj'
+upper_cabinet_raw_mesh_path = 'basement_1_5_img/top_cabinet_left_door/object_2_mesh.obj'
 double_drawer_raw_mesh_path = 'double_drawer.obj'
+
 drawer_dims = sorted(extract_dimensions(drawer_raw_mesh_path))
 door_dims = sorted(extract_dimensions(door_raw_mesh_path))
 upper_cabinet_dims = sorted(extract_dimensions(upper_cabinet_raw_mesh_path))
 double_drawer_dims = sorted(extract_dimensions(double_drawer_raw_mesh_path))
 
 print("Drawer dimensions:", drawer_dims)
-print("Door dimensions:", door_dims)
+print("Lower door dimensions:", door_dims)
 
 # Assign to variables with rounding
 drawer_height = round(drawer_dims[0], 3)
@@ -29,9 +32,20 @@ depth = round(drawer_dims[2], 3)
 
 cabinet_height = round(np.max(door_dims), 3)
 
-upper_cabinet_depth = 0.65 # derived from ratio's of the bodies have issues with the scale of meshes
-upper_cabinet_height = 2.103 # derived from ratio's of the bodies have issues with the scale of meshes
+# Scale upper cabinet door
+mesh = trimesh.load(upper_cabinet_raw_mesh_path)
+scale = round(width / upper_cabinet_dims[1], 3)
+mesh.apply_scale(scale)
+base, ext = os.path.splitext(upper_cabinet_raw_mesh_path)
+scaled_upper_cabinet_raw_mesh_path = f"{base}_scaled_{scale}{ext}"
+mesh.export(scaled_upper_cabinet_raw_mesh_path)
+scaled_upper_cabinet_dims = sorted(extract_dimensions(scaled_upper_cabinet_raw_mesh_path))
+print("Upper door dimensions:", upper_cabinet_dims)
+print("Scaled upper door dimensions:", scaled_upper_cabinet_dims)
 
+
+upper_cabinet_depth = 0.5 * depth # derived from ratio's of the bodies have issues with the scale of meshes
+upper_cabinet_height = round(np.max(scaled_upper_cabinet_dims), 3) # derived from ratio's of the bodies have issues with the scale of meshes
 double_drawer_height = round(np.min(double_drawer_dims) * width * 2 / np.max(double_drawer_dims), 3) # proportional height to width of scene scale
 upper_cabinet_translation = 0.9 # hardcoded translation to place upper cabinets above lower cabinets
 
@@ -46,7 +60,7 @@ assets = basement_kitchen(drawer_height=drawer_height,
                           upper_cabinet_translation=upper_cabinet_translation,
                           s=s)
 
-urdf_path = 'full_pipeline_simple/initial_scene.urdf'
+urdf_path = 'basement_kitchen_pipleine/initial_scene.urdf'
 s.export(urdf_path)
 
 for asset in assets:
@@ -59,7 +73,7 @@ for asset in assets:
         drawer.warp()
 
         warped = drawer.get_warped_mesh().copy()
-        warped_mesh_path = f"full_pipeline_simple/{asset}.obj"
+        warped_mesh_path = f"basement_kitchen_pipleine/{asset}.obj"
         warped.export(warped_mesh_path)
 
         drawer.replace_geometry(input_urdf=urdf_path, output_urdf=urdf_path, mesh_path=warped_mesh_path)
@@ -70,26 +84,28 @@ for asset in assets:
         cabinet.set_mesh()
         cabinet.extract_corners(weight_y_axis=0.5)
         cabinet.warp()
+        # cabinet.debug_visualize(show_obj=True, show_urdf=True, show_warped=True, show_points=True, show_aabb=False)
 
         warped = cabinet.get_warped_mesh().copy()
-        warped_mesh_path = f"full_pipeline_simple/{asset}.obj"
+        warped_mesh_path = f"basement_kitchen_pipleine/{asset}.obj"
         warped.export(warped_mesh_path)
 
         cabinet.replace_geometry(input_urdf=urdf_path, output_urdf=urdf_path, mesh_path=warped_mesh_path)
     if "upper_" in asset:
         urdf_link_name = asset + "_door_0_0"
-        upper_cabinet = ARMDrawer(urdf_path, upper_cabinet_raw_mesh_path, urdf_link_name)
+        upper_cabinet = ARMDrawer(urdf_path, scaled_upper_cabinet_raw_mesh_path, urdf_link_name)
         upper_cabinet.set_urdf()
         upper_cabinet.set_mesh()
         upper_cabinet.extract_corners(weight_y_axis=0.5)
         upper_cabinet.warp()
+        # upper_cabinet.debug_visualize(show_obj=True, show_urdf=True, show_warped=True, show_points=True, show_aabb=False)
 
         warped = upper_cabinet.get_warped_mesh().copy()
-        warped_mesh_path = f"full_pipeline_simple/{asset}.obj"
+        warped_mesh_path = f"basement_kitchen_pipleine/{asset}.obj"
         warped.export(warped_mesh_path)
 
         upper_cabinet.replace_geometry(input_urdf=urdf_path, output_urdf=urdf_path, mesh_path=warped_mesh_path)
-        
+
     if 'double_drawer' in asset:
         urdf_link_name = asset + "_drawer_0_0"
         double_drawer = ARMDrawer(urdf_path, double_drawer_raw_mesh_path, urdf_link_name)
@@ -99,11 +115,10 @@ for asset in assets:
         double_drawer.warp()
 
         warped = double_drawer.get_warped_mesh().copy()
-        warped_mesh_path = f"full_pipeline_simple/{asset}.obj"
+        warped_mesh_path = f"basement_kitchen_pipleine/{asset}.obj"
         warped.export(warped_mesh_path)
 
         double_drawer.replace_geometry(input_urdf=urdf_path, output_urdf=urdf_path, mesh_path=warped_mesh_path)
 
 
-
-
+# idea, scale the meshes first, then extract dimensions
