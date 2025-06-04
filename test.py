@@ -50,9 +50,28 @@ door_path = 'door_4.obj'
 # double_drawer_path = 'basement_1_5_img/top_cabinet_left_door/object_2_mesh.obj'
 # dims = extract_dimensions(double_drawer_path)
 
-double_drawer_path = 'double_drawer.obj'
+# double_drawer_path = 'second_floor_1_5_img/top_drawer_left/object_5_mesh.obj'
+# dims = extract_dimensions(double_drawer_path)
+# print("Drawer 5 dimensions:", dims)
+double_drawer_path = 'second_floor_1_5_img/top_drawer_right/object_6_mesh.obj'
 dims = extract_dimensions(double_drawer_path)
-print("Double drawer dimensions:", dims)# print("Cabinet Left 2 dimensions:", dims)
+print("Drawer 6 dimensions:", dims)
+double_drawer_path = 'second_floor_1_5_img/top_drawer_left/object_5_mesh.obj'
+dims = extract_dimensions(double_drawer_path)
+print("Drawer 5 dimensions:", dims)
+
+double_drawer_path = 'second_floor_1/bottom_cabinet_left_door/object_1_mesh.obj'
+dims = extract_dimensions(double_drawer_path)
+print("Cabinet Right 1 dimensions:", dims)
+double_drawer_path = 'second_floor_1_5_img/bottom_drawer/object_4_mesh.obj'
+dims = extract_dimensions(double_drawer_path)
+print("Bottom Drawer 4 dimensions:", dims)
+# double_drawer_path = 'second_floor_1_5_img/top_cabinet_left_door/object_2_mesh.obj'
+# dims = extract_dimensions(double_drawer_path)
+
+# double_drawer_path = 'double_drawer.obj'
+# dims = extract_dimensions(double_drawer_path)
+# print("Double drawer dimensions:", dims)# print("Cabinet Left 2 dimensions:", dims)
 
 # # Load both meshes
 # drawer_mesh = o3d.io.read_triangle_mesh(double_drawer_path)
