@@ -6,6 +6,8 @@ import scene_synthesizer as synth
 from scene_synthesizer import procedural_assets as pa
 import numpy as np
 import math
+from scene_synthesizer.assets import BoxAsset
+
 # # Assign to variables with rounding
 # drawer_height = 0.333
 # width = 0.958
@@ -294,6 +296,7 @@ def basement_kitchen(drawer_height: float, width: float, depth: float, cabinet_h
     # translation[1, 3] = -(depth - upper_cabinet_depth)  # move +0.998 along Y
     transform = translation @ rotation
 
+    # Extra assets
     s.add_object(
         tilted_upper_right_cabinet,
         assets[21],
@@ -301,6 +304,42 @@ def basement_kitchen(drawer_height: float, width: float, depth: float, cabinet_h
         connect_parent_anchor=('right', 'back', 'bottom'),         # top of the lower cabinet
         connect_obj_anchor=('left', 'back', 'bottom'),         # bottom of the upper cabinet
         transform=transform
+    )
+    counter_0 = BoxAsset(extents=[6 * width, 1.05 * depth, 0.05 * (cabinet_height + drawer_height)])
+    counter_1 = BoxAsset(extents=[2 * width + depth, 1.05 * depth, 0.05 * (cabinet_height + drawer_height)])
+    microwave = pa.MicrowaveAsset(width=2 * width * 0.7, height=(cabinet_height + drawer_height - double_drawer_height) * 0.7, depth=depth * 0.7)
+    refrigerator = pa.RefrigeratorAsset(width=2 * width, height=(cabinet_height + drawer_height + upper_cabinet_height), depth=depth )
+    s.add_object(
+        counter_0,
+        'counter_0',
+        connect_parent_id=assets[5],
+        connect_parent_anchor=('right', 'back', 'top'),         # top of the lower cabinet
+        connect_obj_anchor=('right', 'back', 'bottom'),         # bottom of the upper cabinet
+        translation=(0, 0, 0.0)
+    )
+    s.add_object(
+        counter_1,
+        'counter_1',
+        connect_parent_id=assets[9],
+        connect_parent_anchor=('right', 'back', 'top'),         # top of the lower cabinet
+        connect_obj_anchor=('right', 'back', 'bottom'),         # bottom of the upper cabinet
+        translation=(0, 0, 0.0)
+    )
+    s.add_object(
+        microwave,
+        'microwave',
+        connect_parent_id=assets[20],
+        connect_parent_anchor=('center', 'center', 'top'),         # top of the lower cabinet
+        connect_obj_anchor=('center', 'center', 'bottom'),         # bottom of the upper cabinet
+        translation=(0, 0, 0)
+    )
+    s.add_object(
+        refrigerator,
+        'refrigerator',
+        connect_parent_id=assets[20],
+        connect_parent_anchor=('left', 'back', 'bottom'),         # top of the lower cabinet
+        connect_obj_anchor=('right', 'back', 'bottom'),         # bottom of the upper cabinet
+        translation=(0, 0, 0)
     )
 
     if show:

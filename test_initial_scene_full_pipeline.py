@@ -44,10 +44,21 @@ print("Upper door dimensions:", upper_cabinet_dims)
 print("Scaled upper door dimensions:", scaled_upper_cabinet_dims)
 
 
+# Scale double drawer
+mesh = trimesh.load(double_drawer_raw_mesh_path)
+scale = round(depth / double_drawer_dims[1], 3)
+mesh.apply_scale(scale)
+base, ext = os.path.splitext(double_drawer_raw_mesh_path)
+scaled_double_drawer_raw_mesh_path = f"{base}_scaled_{scale}{ext}"
+mesh.export(scaled_double_drawer_raw_mesh_path)
+scaled_double_drawer_dims = sorted(extract_dimensions(scaled_double_drawer_raw_mesh_path))
+print("Double drawer dimensions:", double_drawer_dims)
+print("Scaled double drawer dimensions:", scaled_double_drawer_dims)
+
 upper_cabinet_depth = 0.5 * depth # derived from ratio's of the bodies have issues with the scale of meshes
-upper_cabinet_height = round(np.max(scaled_upper_cabinet_dims), 3) # derived from ratio's of the bodies have issues with the scale of meshes
-double_drawer_height = round(np.min(double_drawer_dims) * width * 2 / np.max(double_drawer_dims), 3) # proportional height to width of scene scale
 upper_cabinet_translation = 0.9 # hardcoded translation to place upper cabinets above lower cabinets
+upper_cabinet_height = round(np.max(scaled_upper_cabinet_dims), 3)
+double_drawer_height = round(np.min(scaled_double_drawer_dims) * width * 2 / np.max(scaled_double_drawer_dims), 3)
 
 s = synth.Scene()
 assets = basement_kitchen(drawer_height=drawer_height, 
@@ -96,7 +107,14 @@ for asset in assets:
         upper_cabinet = ARMDrawer(urdf_path, scaled_upper_cabinet_raw_mesh_path, urdf_link_name)
         upper_cabinet.set_urdf()
         upper_cabinet.set_mesh()
-        upper_cabinet.extract_corners(weight_y_axis=0.5)
+        # Reflection matrix across the y-axis
+        R = np.array([
+            [1,  0,  0,  0],
+            [ 0,  -1,  0,  0],
+            [ 0,  0,  1,  0],
+            [ 0,  0,  0,  1]
+        ])
+        upper_cabinet.extract_corners(weight_y_axis=0.5, manual_reflection=R)
         upper_cabinet.warp()
         # upper_cabinet.debug_visualize(show_obj=True, show_urdf=True, show_warped=True, show_points=True, show_aabb=False)
 
@@ -108,11 +126,18 @@ for asset in assets:
 
     if 'double_drawer' in asset:
         urdf_link_name = asset + "_drawer_0_0"
-        double_drawer = ARMDrawer(urdf_path, double_drawer_raw_mesh_path, urdf_link_name)
+        double_drawer = ARMDrawer(urdf_path, scaled_double_drawer_raw_mesh_path, urdf_link_name)
         double_drawer.set_urdf()
         double_drawer.set_mesh()
-        double_drawer.extract_corners(weight_y_axis=100)
+        R = np.array([
+            [1,  0,  0,  0],
+            [ 0,  -1,  0,  0],
+            [ 0,  0,  1,  0],
+            [ 0,  0,  0,  1]
+        ])
+        double_drawer.extract_corners(weight_y_axis=100, manual_reflection=R)
         double_drawer.warp()
+        # double_drawer.debug_visualize(show_obj=True, show_urdf=True, show_warped=False, show_points=True, show_aabb=False)
 
         warped = double_drawer.get_warped_mesh().copy()
         warped_mesh_path = f"basement_kitchen_pipleine/{asset}.obj"

@@ -12,9 +12,9 @@ from itertools import permutations, product
 
 
 class ARMDrawer(AddRealisticMesh):
-    def extract_corners(self, sample_count: int = 100000, weight_y_axis: float = 5.0):
+    def extract_corners(self, sample_count: int = 100000, weight_y_axis: float = 5.0, manual_reflection=None):
         self._simple_align_mesh()
-        self._refine_rotation_all_90_axes(sample_count=sample_count)
+        self._refine_rotation_all_90_axes(sample_count=sample_count, manual_reflection=manual_reflection)
         # MESH corners extraction
         if self.mesh is None:
             raise RuntimeError("Call set_mesh() first.")
@@ -88,7 +88,7 @@ class ARMDrawer(AddRealisticMesh):
         
         self.urdf_corners = np.array(corners)
 
-    def _refine_rotation_all_90_axes(self, sample_count: int = 100000):
+    def _refine_rotation_all_90_axes(self, sample_count: int = 100000, manual_reflection = None):
         """
         Instead of brute‐forcing all 24 axis swaps, we:
         1) Look at each mesh’s AABB.extents (dx, dy, dz) after AABB‐alignment & centering.
@@ -174,6 +174,10 @@ class ARMDrawer(AddRealisticMesh):
         # --- 5) Store and report the result ---
         print(f"refine_rotation_all_90_axes: best total_dist = {best_total:.6f}")
         print(f"Best 3×3 rotation matrix:\n{best_R}")
+
+        if manual_reflection is not None:
+            # Apply the manual reflection if provided
+            best_mesh_aligned.apply_transform(manual_reflection)
 
         self.mesh = best_mesh_aligned.copy()
 
